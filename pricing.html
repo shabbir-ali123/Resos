@@ -64,7 +64,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
     
      <nav class="flex items-center gap-7">
       
-       <div class="flex items-center cursor-pointer gap-1">
+       <div class="relative flex items-center cursor-pointer gap-1 group" id="features-dropdown-toggle">
          <span class="text-sm font-semibold text-white/80 leading-[11px]"
            >Features</span
          >
@@ -74,24 +74,46 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
            viewBox="0 0 14 13"
            fill="none"
            xmlns="http://www.w3.org/2000/svg"
+           class="transition-transform duration-200"
+           id="features-chevron"
          >
            <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
          </svg>
+         <div
+           class="absolute hidden top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20"
+           id="features-dropdown-menu"
+         >
+           <a
+             href="#"
+             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+             >Feature A</a
+           >
+           <a
+             href="#"
+             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+             >Feature B</a
+           >
+           <a
+             href="#"
+             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+             >Feature C</a
+           >
+         </div>
        </div>
 
        <!-- Navigation Item (Purple) -->
-       <span class="text-sm font-semibold text-[#E1BDFF] leading-[11px]"
+       <span class="text-sm font-semibold text-[#E1BDFF] leading-[11px] cursor-pointer"
          >Pricing</span
        >
 
        <!-- Navigation Item -->
-       <span class="text-sm font-semibold text-white/80 leading-[11px]"
+       <span class="text-sm font-semibold text-white/80 leading-[11px] cursor-pointer"
          >Support</span
        >
 
        <!-- Navigation Item with Dropdown -->
-       <div class="flex items-center cursor-pointer gap-1">
-         <span class="text-sm font-semibold text-white/80 leading-[11px]"
+       <div class="relative flex items-center cursor-pointer gap-1 group" id="resources-dropdown-toggle">
+         <span class="text-sm font-semibold text-white/80 leading-[11px] cursor-pointer"
            >Resources</span
          >
          <svg
@@ -100,9 +122,31 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
            viewBox="0 0 14 13"
            fill="none"
            xmlns="http://www.w3.org/2000/svg"
+           class="transition-transform duration-200"
+           id="resources-chevron"
          >
            <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
          </svg>
+         <div
+           class="absolute hidden top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20"
+           id="resources-dropdown-menu"
+         >
+           <a
+             href="#"
+             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+             >Resource X</a
+           >
+           <a
+             href="#"
+             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+             >Resource Y</a
+           >
+           <a
+             href="#"
+             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+             >Resource Z</a
+           >
+         </div>
        </div>
      </nav>
 
@@ -113,14 +157,14 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
      <div class="flex items-center gap-6">
     
        <button
-         class="rounded-md w-[70px] font-semibold text-[#FFC720] text-sm leading-[11px] h-[31px] flex items-center justify-center"
+         class="rounded-md w-[70px] font-semibold text-[#FFC720] text-sm leading-[11px] h-[31px] flex items-center justify-center cursor-pointer"
        >
          Sign in
        </button>
 
   
        <button
-         class="rounded-md text-[#4c2b5e] w-[153px] bg-[#FFC720] text-sm font-semibold leading-[11px] h-12 flex items-center justify-center shadow-[0_0_16px_2px_rgba(66,21,74,0.11)]"
+         class="rounded-md text-[#4c2b5e] w-[153px] bg-[#FFC720] text-sm font-semibold leading-[11px] h-12 flex items-center justify-center shadow-[0_0_16px_2px_rgba(66,21,74,0.11)] cursor-pointer"
        >
          Try for free
        </button>
@@ -155,7 +199,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
    id="mobile-menu"
  >
    <nav class="flex flex-col p-4 space-y-4">
-     <div class="flex items-center justify-between cursor-pointer">
+     <div class="relative flex items-center justify-between cursor-pointer" id="mobile-features-dropdown-toggle">
        <span class="text-base font-semibold text-white/80">Features</span>
        <svg
          width="14"
@@ -163,13 +207,35 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
          viewBox="0 0 14 13"
          fill="none"
          xmlns="http://www.w3.org/2000/svg"
+         class="transition-transform duration-200"
+         id="mobile-features-chevron"
        >
          <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
        </svg>
+       <div
+         class="absolute hidden top-full left-0 mt-2 w-full bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] rounded-md shadow-lg py-1 z-20"
+         id="mobile-features-dropdown-menu"
+       >
+         <a
+           href="#"
+           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+           >Feature A (Mobile)</a
+         >
+         <a
+           href="#"
+           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+           >Feature B (Mobile)</a
+         >
+         <a
+           href="#"
+           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+           >Feature C (Mobile)</a
+         >
+       </div>
      </div>
      <span class="text-base font-semibold text-[#E1BDFF]">Pricing</span>
      <span class="text-base font-semibold text-white/80">Support</span>
-     <div class="flex items-center justify-between cursor-pointer">
+     <div class="relative flex items-center justify-between cursor-pointer" id="mobile-resources-dropdown-toggle">
        <span class="text-base font-semibold text-white/80">Resources</span>
        <svg
          width="14"
@@ -177,9 +243,31 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
          viewBox="0 0 14 13"
          fill="none"
          xmlns="http://www.w3.org/2000/svg"
+         class="transition-transform duration-200"
+         id="mobile-resources-chevron"
        >
          <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
        </svg>
+       <div
+         class="absolute hidden top-full left-0 mt-2 w-full bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] rounded-md shadow-lg py-1 z-20"
+         id="mobile-resources-dropdown-menu"
+       >
+         <a
+           href="#"
+           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+           >Resource X (Mobile)</a
+         >
+         <a
+           href="#"
+           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+           >Resource Y (Mobile)</a
+         >
+         <a
+           href="#"
+           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+           >Resource Z (Mobile)</a
+         >
+       </div>
      </div>
      <div class="pt-4 border-t border-white/20 space-y-3">
        <button
@@ -1993,6 +2081,33 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
 
   // Initialize prices to annual on page load
   updatePrices(true);
+
+  // Dropdown toggling logic
+  function setupDropdown(toggleId, menuId, chevronId) {
+    const toggle = document.getElementById(toggleId);
+    const menu = document.getElementById(menuId);
+    const chevron = document.getElementById(chevronId);
+
+    if (toggle && menu && chevron) {
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('hidden');
+        chevron.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.add('hidden');
+          chevron.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+  }
+
+  setupDropdown('features-dropdown-toggle', 'features-dropdown-menu', 'features-chevron');
+  setupDropdown('resources-dropdown-toggle', 'resources-dropdown-menu', 'resources-chevron');
+  setupDropdown('mobile-features-dropdown-toggle', 'mobile-features-dropdown-menu', 'mobile-features-chevron');
+  setupDropdown('mobile-resources-dropdown-toggle', 'mobile-resources-dropdown-menu', 'mobile-resources-chevron');
 </script>
 </body>
 
