@@ -1,2006 +1,2130 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing - Resos</title>
-  <link href="./style.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    .hero-clip-top {
-      clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-    }
-    .gradient-text {
-      background: linear-gradient(130.58deg, #63c381 31.38%, #259047 131.92%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .gradient-text-purple {
-      background: linear-gradient(130.58deg, #83429b 31.38%, #392949 131.92%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .gradient-text-plus {
-      background: linear-gradient(90.11deg, #dfcfe9 19.42%, #faf0d4 100.12%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    @media (min-width: 1024px) and (max-width: 1283px) {
-      .pricing-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing - Resos</title>
+    <link href="./style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      .hero-clip-top {
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
       }
-      .plus-card{
-        margin-top: 8px;
-        width: 430px;
+
+      .gradient-text {
+        background: linear-gradient(130.58deg, #63c381 31.38%, #259047 131.92%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
-    }
-    @media (max-width: 1024px) {
-      .plus-card{
-        margin-top: 4px;
+
+      .gradient-text-purple {
+        background: linear-gradient(130.58deg, #83429b 31.38%, #392949 131.92%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
-    }
-  </style>
-</head>
 
-<body
-class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6.47%,#FBFAF2_89.27%)]"
->
- <!-- Header -->
- <header
- class="sticky top-0 z-50 w-full h-[90px] bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] shadow-[0_4px_16px_rgba(0,0,0,0.06)]"
->
- <div class="container mx-auto h-full flex items-center justify-between">
-   <!-- Logo -->
-   <div class="flex-shrink-0">
-     <div class="w-[140px] h-[50px] flex items-center justify-center">
-      <a href="https://resos.com/">
-        <img
-        src="./assets/resOS-logo-light.svg"
-        alt="resOS logo"
-        class="h-8 w-auto"
-      />
-      </a>
-      
-     </div>
-   </div>
+      .gradient-text-plus {
+        background: linear-gradient(90.11deg, #dfcfe9 19.42%, #faf0d4 100.12%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      @media (min-width: 1024px) and (max-width: 1283px) {
+        .pricing-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .plus-card {
+          margin-top: 8px;
+          width: 430px;
+        }
+      }
+      @media (max-width: 1024px) {
+        .plus-card {
+          margin-top: 4px;
+        }
+      }
+    </style>
+  </head>
 
-   <!-- Navigation Section -->
-   <div class="hidden lg:flex items-center h-12 gap-10">
-    
-     <nav class="flex items-center gap-7">
-      
-       <div class="relative flex items-center cursor-pointer gap-1 group" id="features-dropdown-toggle">
-         <span class="text-sm font-semibold text-white/80 leading-[11px]"
-           >Features</span
-         >
-         <svg
-           width="14"
-           height="13"
-           viewBox="0 0 14 13"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="transition-transform duration-200"
-           id="features-chevron"
-         >
-           <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
-         </svg>
-         <div
-           class="absolute hidden top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20"
-           id="features-dropdown-menu"
-         >
-           <a
-             href="#"
-             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
-             >Feature A</a
-           >
-           <a
-             href="#"
-             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
-             >Feature B</a
-           >
-           <a
-             href="#"
-             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
-             >Feature C</a
-           >
-         </div>
-       </div>
-
-       <!-- Navigation Item (Purple) -->
-       <span class="text-sm font-semibold text-[#E1BDFF] leading-[11px] cursor-pointer"
-         >Pricing</span
-       >
-
-       <!-- Navigation Item -->
-       <span class="text-sm font-semibold text-white/80 leading-[11px] cursor-pointer"
-         >Support</span
-       >
-
-       <!-- Navigation Item with Dropdown -->
-       <div class="relative flex items-center cursor-pointer gap-1 group" id="resources-dropdown-toggle">
-         <span class="text-sm font-semibold text-white/80 leading-[11px] cursor-pointer"
-           >Resources</span
-         >
-         <svg
-           width="14"
-           height="13"
-           viewBox="0 0 14 13"
-           fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           class="transition-transform duration-200"
-           id="resources-chevron"
-         >
-           <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
-         </svg>
-         <div
-           class="absolute hidden top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20"
-           id="resources-dropdown-menu"
-         >
-           <a
-             href="#"
-             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
-             >Resource X</a
-           >
-           <a
-             href="#"
-             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
-             >Resource Y</a
-           >
-           <a
-             href="#"
-             class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
-             >Resource Z</a
-           >
-         </div>
-       </div>
-     </nav>
-
-
-     <div class="w-[2px] h-12 bg-white"></div>
-
-
-     <div class="flex items-center gap-6">
-    
-       <button
-         class="rounded-md w-[70px] font-semibold text-[#FFC720] text-sm leading-[11px] h-[31px] flex items-center justify-center cursor-pointer"
-       >
-         Sign in
-       </button>
-
-  
-       <button
-         class="rounded-md text-[#4c2b5e] w-[153px] bg-[#FFC720] text-sm font-semibold leading-[11px] h-12 flex items-center justify-center shadow-[0_0_16px_2px_rgba(66,21,74,0.11)] cursor-pointer"
-       >
-         Try for free
-       </button>
-     </div>
-   </div>
-
-
-   <button
-     class="lg:hidden text-white p-2"
-     aria-label="Toggle menu"
-     id="mobile-menu-button"
-   >
-     <svg
-       class="w-6 h-6"
-       fill="none"
-       stroke="currentColor"
-       viewBox="0 0 24 24"
-     >
-       <path
-         stroke-linecap="round"
-         stroke-linejoin="round"
-         stroke-width="2"
-         d="M4 6h16M4 12h16M4 18h16"
-       />
-     </svg>
-   </button>
- </div>
-
-
- <div
-   class="lg:hidden hidden absolute top-[90px] left-0 w-full bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] shadow-lg z-50"
-   id="mobile-menu"
- >
-   <nav class="flex flex-col p-4 space-y-4">
-     <div class="relative flex items-center justify-between cursor-pointer" id="mobile-features-dropdown-toggle">
-       <span class="text-base font-semibold text-white/80">Features</span>
-       <svg
-         width="14"
-         height="13"
-         viewBox="0 0 14 13"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-         class="transition-transform duration-200"
-         id="mobile-features-chevron"
-       >
-         <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
-       </svg>
-       <div
-         class="absolute hidden top-full left-0 mt-2 w-full bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] rounded-md shadow-lg py-1 z-20"
-         id="mobile-features-dropdown-menu"
-       >
-         <a
-           href="#"
-           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-           >Feature A (Mobile)</a
-         >
-         <a
-           href="#"
-           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-           >Feature B (Mobile)</a
-         >
-         <a
-           href="#"
-           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-           >Feature C (Mobile)</a
-         >
-       </div>
-     </div>
-     <span class="text-base font-semibold text-[#E1BDFF]">Pricing</span>
-     <span class="text-base font-semibold text-white/80">Support</span>
-     <div class="relative flex items-center justify-between cursor-pointer" id="mobile-resources-dropdown-toggle">
-       <span class="text-base font-semibold text-white/80">Resources</span>
-       <svg
-         width="14"
-         height="13"
-         viewBox="0 0 14 13"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-         class="transition-transform duration-200"
-         id="mobile-resources-chevron"
-       >
-         <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
-       </svg>
-       <div
-         class="absolute hidden top-full left-0 mt-2 w-full bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] rounded-md shadow-lg py-1 z-20"
-         id="mobile-resources-dropdown-menu"
-       >
-         <a
-           href="#"
-           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-           >Resource X (Mobile)</a
-         >
-         <a
-           href="#"
-           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-           >Resource Y (Mobile)</a
-         >
-         <a
-           href="#"
-           class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
-           >Resource Z (Mobile)</a
-         >
-       </div>
-     </div>
-     <div class="pt-4 border-t border-white/20 space-y-3">
-       <button
-         class="w-full rounded-md font-semibold text-[#FFC720] text-base h-[31px] flex items-center justify-center"
-       >
-         Sign in
-       </button>
-       <button
-         class="w-full rounded-md text-[#4c2b5e] bg-[#FFC720] text-base font-semibold h-12 flex items-center justify-center shadow-[0_0_16px_2px_rgba(66,21,74,0.11)]"
-       >
-         Try for free
-       </button>
-     </div>
-   </nav>
- </div>
-</header>
- 
- <section class="relative w-full overflow-hidden">
-  <!-- Purple Background Section -->
-  <div
-    class="relative bg-[#4c2b5e] pt-16 pb-32 md:pt-20 md:pb-40 lg:pt-24 lg:pb-48 hero-clip-top"
+  <body
+    class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6.47%,#FBFAF2_89.27%)]"
   >
-    <div class="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Main Heading -->
-        <h1 class="text-[44px] font-semibold text-white mb-2 leading-tight">
-          No booking commission or cover fees
-        </h1>
-        <!-- Subheading -->
-        <p class="text-lg font-normal text-white max-w-2xl mx-auto">
-          Choose pricing plan that fits your booking volume
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
- 
-  <section class="relative w-full -mt-1 pt-16 pb-8">
-    <div class="container flex flex-col items-center mx-auto">
- 
-      <div
-        class="relative flex flex-col md:flex-row items-center md:items-center md:justify-between gap-4 md:gap-0 w-full"
-      >
-       
-        <div class="hidden md:block w-[104px]"></div>
-      
-        <div
-          class="w-full max-w-[312px] md:w-[312px] h-[50px] bg-white rounded-lg border border-[rgba(79,55,138,0.14)] shadow-[0_0_16px_2px_rgba(66,21,74,0.11)] flex items-center gap-0.5 p-1.5"
-        >
-         
-          <button
-            id="annual-button"
-            class="flex-1 h-[38px] bg-[#4c2b5e] rounded-md flex items-center justify-center gap-1 md:gap-2 shadow-[0_2px_24px_rgba(51,29,72,0.16)] relative px-2 md:px-4"
-          >
-         
-            <span
-              class="text-sm md:text-base font-semibold text-white leading-[11px]"
-              >Annually</span
-            >
-           
-            <div
-              class="bg-[#FFC720] rounded-full px-1.5 md:px-2 flex items-center justify-center"
-            >
-              -
-              <span
-                class="text-[10px] md:text-xs font-medium text-[#4c2b5e] leading-[8px]"
-              >
-                20%</span
-              >
-            </div>
-          </button>
-
-         
-          <button
-            id="monthly-button"
-            class="flex-1 h-[38px] bg-transparent rounded-md flex items-center justify-center px-2 md:px-4"
-          >
-        
-            <span
-              class="text-sm md:text-base font-semibold text-[#4c2b5e] leading-[11px]"
-              >Monthly</span
-            >
-          </button>
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 w-full h-[90px] bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] shadow-[0_4px_16px_rgba(0,0,0,0.06)]"
+    >
+      <div class="container mx-auto h-full flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <div class="w-[140px] h-[50px] flex items-center justify-center">
+            <a href="https://resos.com/">
+              <img
+                src="./assets/resOS-logo-light.svg"
+                alt="resOS logo"
+                class="h-8 w-auto"
+              />
+            </a>
+          </div>
         </div>
 
-   
-        <div class="relative">
-          <button
-            id="currency-button"
-            class="w-[104px] h-9 bg-white rounded-lg border border-[rgba(79,55,138,0.14)] shadow-[0_0_16px_2px_rgba(66,21,74,0.11)] flex items-center justify-center gap-1.5 px-3"
-          >
-          
-            <span class="text-xs font-medium text-[#4c2b5e] leading-[10px]"
-              >GBP (£)</span
+        <!-- Navigation Section -->
+        <div class="hidden lg:flex items-center h-12 gap-10">
+          <nav class="flex items-center gap-7">
+            <div
+              class="relative flex items-center cursor-pointer gap-1 group"
+              id="features-dropdown-toggle"
             >
-      
+              <span class="text-sm font-semibold text-white/80 leading-[11px]"
+                >Features</span
+              >
+              <svg
+                width="14"
+                height="13"
+                viewBox="0 0 14 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="transition-transform duration-200"
+                id="features-chevron"
+              >
+                <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
+              </svg>
+              <div
+                class="absolute hidden top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20"
+                id="features-dropdown-menu"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+                  >Feature A</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+                  >Feature B</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+                  >Feature C</a
+                >
+              </div>
+            </div>
+
+            <!-- Navigation Item (Purple) -->
+            <span
+              class="text-sm font-semibold text-[#E1BDFF] leading-[11px] cursor-pointer"
+              >Pricing</span
+            >
+
+            <!-- Navigation Item -->
+            <span
+              class="text-sm font-semibold text-white/80 leading-[11px] cursor-pointer"
+              >Support</span
+            >
+
+            <!-- Navigation Item with Dropdown -->
+            <div
+              class="relative flex items-center cursor-pointer gap-1 group"
+              id="resources-dropdown-toggle"
+            >
+              <span
+                class="text-sm font-semibold text-white/80 leading-[11px] cursor-pointer"
+                >Resources</span
+              >
+              <svg
+                width="14"
+                height="13"
+                viewBox="0 0 14 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="transition-transform duration-200"
+                id="resources-chevron"
+              >
+                <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
+              </svg>
+              <div
+                class="absolute hidden top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20"
+                id="resources-dropdown-menu"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+                  >Resource X</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+                  >Resource Y</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-[#4c2b5e] hover:bg-gray-100"
+                  >Resource Z</a
+                >
+              </div>
+            </div>
+          </nav>
+
+          <div class="w-[2px] h-12 bg-white"></div>
+
+          <div class="flex items-center gap-6">
+            <button
+              class="rounded-md w-[70px] font-semibold text-[#FFC720] text-sm leading-[11px] h-[31px] flex items-center justify-center cursor-pointer"
+            >
+              Sign in
+            </button>
+
+            <button
+              class="rounded-md text-[#4c2b5e] w-[153px] bg-[#FFC720] text-sm font-semibold leading-[11px] h-12 flex items-center justify-center shadow-[0_0_16px_2px_rgba(66,21,74,0.11)] cursor-pointer"
+            >
+              Try for free
+            </button>
+          </div>
+        </div>
+
+        <button
+          class="lg:hidden text-white p-2"
+          aria-label="Toggle menu"
+          id="mobile-menu-button"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        class="lg:hidden hidden absolute top-[90px] left-0 w-full bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] shadow-lg z-50"
+        id="mobile-menu"
+      >
+        <nav class="flex flex-col p-4 space-y-4">
+          <div
+            class="relative flex items-center justify-between cursor-pointer"
+            id="mobile-features-dropdown-toggle"
+          >
+            <span class="text-base font-semibold text-white/80">Features</span>
             <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
+              width="14"
+              height="13"
+              viewBox="0 0 14 13"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              id="currency-chevron"
               class="transition-transform duration-200"
+              id="mobile-features-chevron"
             >
-              <path
-                d="M4 6L8 10L12 6"
-                stroke="#4c2b5e"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+              <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
             </svg>
-          </button>
-
- 
+            <div
+              class="absolute hidden top-full left-0 mt-2 w-full bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] rounded-md shadow-lg py-1 z-20"
+              id="mobile-features-dropdown-menu"
+            >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+                >Feature A (Mobile)</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+                >Feature B (Mobile)</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+                >Feature C (Mobile)</a
+              >
+            </div>
+          </div>
+          <span class="text-base font-semibold text-[#E1BDFF]">Pricing</span>
+          <span class="text-base font-semibold text-white/80">Support</span>
           <div
-            id="currency-dropdown"
-            class="hidden absolute top-full right-0 mt-1 w-[104px] bg-white rounded-lg border border-[rgba(79,55,138,0.14)] shadow-[0_0_16px_2px_rgba(66,21,74,0.11)] z-10"
+            class="relative flex items-center justify-between cursor-pointer"
+            id="mobile-resources-dropdown-toggle"
           >
-            <button
-              class="currency-option w-full px-3 py-2 text-left text-xs font-medium text-[#4c2b5e] hover:bg-gray-50 rounded-t-lg"
-              data-currency="GBP"
-              data-symbol="£"
+            <span class="text-base font-semibold text-white/80">Resources</span>
+            <svg
+              width="14"
+              height="13"
+              viewBox="0 0 14 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="transition-transform duration-200"
+              id="mobile-resources-chevron"
             >
-              GBP (£)
+              <path d="M10.59 9.8L7 5.2L3.41 9.8H10.59Z" fill="white" />
+            </svg>
+            <div
+              class="absolute hidden top-full left-0 mt-2 w-full bg-gradient-to-br from-[rgb(99,53,125)] to-[rgb(57,41,73)] rounded-md shadow-lg py-1 z-20"
+              id="mobile-resources-dropdown-menu"
+            >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+                >Resource X (Mobile)</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+                >Resource Y (Mobile)</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+                >Resource Z (Mobile)</a
+              >
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/20 space-y-3">
+            <button
+              class="w-full rounded-md font-semibold text-[#FFC720] text-base h-[31px] flex items-center justify-center"
+            >
+              Sign in
             </button>
             <button
-              class="currency-option w-full px-3 py-2 text-left text-xs font-medium text-[#4c2b5e] hover:bg-gray-50"
-              data-currency="USD"
-              data-symbol="$"
+              class="w-full rounded-md text-[#4c2b5e] bg-[#FFC720] text-base font-semibold h-12 flex items-center justify-center shadow-[0_0_16px_2px_rgba(66,21,74,0.11)]"
             >
-              USD ($)
+              Try for free
             </button>
-            <button
-              class="currency-option w-full px-3 py-2 text-left text-xs font-medium text-[#4c2b5e] hover:bg-gray-50 rounded-b-lg"
-              data-currency="EUR"
-              data-symbol="€"
-            >
-              EUR (€)
-            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="relative w-full overflow-hidden">
+      <!-- Purple Background Section -->
+      <div
+        class="relative bg-[#4c2b5e] pt-16 pb-32 md:pt-20 md:pb-40 lg:pt-24 lg:pb-48 hero-clip-top"
+      >
+        <div class="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16">
+          <div class="max-w-4xl mx-auto text-center">
+            <!-- Main Heading -->
+            <h1 class="text-[44px] font-semibold text-white mb-2 leading-tight">
+              No booking commission or cover fees
+            </h1>
+            <!-- Subheading -->
+            <p class="text-lg font-normal text-white max-w-2xl mx-auto">
+              Choose pricing plan that fits your booking volume
+            </p>
           </div>
         </div>
       </div>
+    </section>
 
-     
-      <div
-        class="w-full flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-7 mt-6"
-      >
- 
-        <div class="flex items-center gap-1">
-          <!-- Check Icon -->
-          <img src="./assets/check.svg" alt="Check" class="w-4 h-4" />
-          <!-- Feature Text -->
-          <span class="text-sm md:text-base font-semibold text-[#2B233A]">
-            All core features included
-          </span>
-        </div>
-
-     
-        <div class="flex items-center gap-1">
-       
-          <img src="./assets/check.svg" alt="Check" class="w-4 h-4" />
-        
-          <span class="text-sm md:text-base font-semibold text-[#2B233A]">
-            Free onboarding & Support
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
- 
-  <section class="relative w-full pt-8 pb-16">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-10">
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pricing-grid gap-4 sm:gap-6 lg:mb-[-160px]"
-      >
-        <!-- Free Plan Card -->
+    <section class="relative w-full -mt-1 pt-16 pb-8">
+      <div class="container flex flex-col items-center mx-auto">
         <div
-          class="relative w-full h-auto md:h-[430px] bg-white rounded-xl shadow-lg overflow-hidden"
+          class="relative flex flex-col md:flex-row items-center md:items-center md:justify-between gap-4 md:gap-0 w-full"
         >
-          <!-- Card Content -->
+          <div class="hidden md:block w-[104px]"></div>
+
           <div
-            class="px-5 sm:px-6 pt-5 sm:pt-6 pb-0 flex flex-col gap-4 sm:gap-5"
+            class="w-full max-w-[312px] md:w-[312px] h-[50px] bg-white rounded-lg border border-[rgba(79,55,138,0.14)] shadow-[0_0_16px_2px_rgba(66,21,74,0.11)] flex items-center gap-0.5 p-1.5"
           >
-            <div>
-              <!-- Badge - Free forever -->
+            <button
+              id="annual-button"
+              class="flex-1 h-[38px] bg-[#4c2b5e] rounded-md flex items-center justify-center gap-1 md:gap-2 shadow-[0_2px_24px_rgba(51,29,72,0.16)] relative px-2 md:px-4"
+            >
+              <span
+                class="text-sm md:text-base font-semibold text-white leading-[11px]"
+                >Annually</span
+              >
+
               <div
-                class="absolute top-2 right-5 flex items-center gap-1.5 bg-[#E8F5E9] rounded-md px-2.5 py-1"
+                class="bg-[#FFC720] rounded-full px-1.5 md:px-2 flex items-center justify-center"
               >
-                <!-- Star Icon -->
-                <i data-lucide="star" class="w-3 h-3 text-[#3AA95D] fill-[#3AA95D]"></i>
-
-                <span class="text-[13px] font-bold text-[#3AA95D]"
-                  >Free forever</span
+                -
+                <span
+                  class="text-[10px] md:text-xs font-medium text-[#4c2b5e] leading-[8px]"
+                >
+                  20%</span
                 >
               </div>
+            </button>
 
-              <!-- Plan Title -->
-              <h3
-                class="text-[22px] sm:text-[24px] font-bold text-[#2B233A] mb-1"
-              >
-                Free <span class="font-normal"> plan </span>
-              </h3>
-
-              <!-- Price -->
-              <p class="text-base sm:text-lg font-semibold text-[#2B233A8C]">
-                <span class="price-display" data-annual-price="0" data-monthly-price="0">£0</span> /month
-              </p>
-            </div>
-
-            <div>
-              <!-- Key Feature -->
-              <div class="text-start my-4 sm:my-6">
-                <div
-                  class="text-[32px] sm:text-[40px] font-bold mb-1 gradient-text whitespace-nowrap mb-[-5px]"
-                >
-                  25 bookings
-                </div>
-                <p class="text-sm sm:text-base font-semibold gradient-text">
-                  /month
-                </p>
-              </div>
-
-              <!-- CTA Button -->
-              <div class="mb-6">
-                <button
-                  class="w-full h-11 sm:h-12 bg-gradient-to-r from-[#66BB6A] to-[#4CAF50] rounded-lg text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-shadow"
-                >
-                  Start for free
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Footer Section -->
-          <div
-            class="bg-[#E8F5E9] px-5 sm:px-6 py-4 flex items-center gap-2 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0 pb-6 sm:pb-20"
-          >
-            <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
-            <span class="text-sm font-normal text-[#2B233A]"
-              >No credit card required</span
+            <button
+              id="monthly-button"
+              class="flex-1 h-[38px] bg-transparent rounded-md flex items-center justify-center px-2 md:px-4"
             >
-          </div>
-        </div>
-        <!-- Basic  Plan Card -->
-        <div
-          class="relative w-full h-auto md:h-[430px] bg-white rounded-xl shadow-lg overflow-hidden"
-        >
-          <!-- Card Content -->
-          <div
-            class="px-5 sm:px-6 pt-5 sm:pt-6 pb-0 flex flex-col gap-4 sm:gap-5"
-          >
-            <div>
-              <!-- Plan Title -->
-              <h3
-                class="text-[22px] sm:text-[24px] font-bold text-[#2B233A] mb-1"
+              <span
+                class="text-sm md:text-base font-semibold text-[#4c2b5e] leading-[11px]"
+                >Monthly</span
               >
-                Basic <span class="font-normal"> plan </span>
-              </h3>
-
-              <!-- Price -->
-              <p class="text-base sm:text-lg font-semibold text-[#2B233A8C]">
-                <span class="price-display" data-annual-price="39" data-monthly-price="49">£39</span> /month
-              </p>
-            </div>
-
-            <div>
-              <!-- Key Feature -->
-              <div class="text-start my-4 sm:my-6">
-                <div
-                  class="text-[32px] sm:text-[40px] font-bold mb-1 gradient-text-purple whitespace-nowrap mb-[-5px]"
-                >
-                  350 bookings
-                </div>
-                <p
-                  class="text-sm sm:text-base font-semibold gradient-text-purple"
-                >
-                  /month
-                </p>
-              </div>
-
-              <!-- CTA Button -->
-              <div class="mb-6">
-                <button
-                  class="w-full h-11 sm:h-12 rounded-lg text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-shadow"
-                  style="
-                    background: linear-gradient(
-                      130.58deg,
-                      #83429b 31.38%,
-                      #392949 131.92%
-                    );
-                  "
-                >
-                  Start for free
-                </button>
-              </div>
-            </div>
+            </button>
           </div>
 
-          <!-- Footer Section -->
-          <div
-            class="bg-[#EAE1F366] px-5 sm:px-6 py-4 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
-          >
-            <div class="flex items-center gap-2">
-              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
-              <span class="text-sm font-normal text-[#2B233A]"
-                >90-day money-back guarantee</span
+          <div class="relative">
+            <button
+              id="currency-button"
+              class="w-[104px] h-9 bg-white rounded-lg border border-[rgba(79,55,138,0.14)] shadow-[0_0_16px_2px_rgba(66,21,74,0.11)] flex items-center justify-center gap-1.5 px-3"
+            >
+              <span class="text-xs font-medium text-[#4c2b5e] leading-[10px]"
+                >GBP (£)</span
               >
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
-              <span class="text-sm font-normal text-[#2B233A]"
-                >Pause or cancel anytime</span
+
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                id="currency-chevron"
+                class="transition-transform duration-200"
               >
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
-              <span class="text-sm font-normal text-[#2B233A]"
-                >No commission. No cover fees</span
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="#4c2b5e"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+
+            <div
+              id="currency-dropdown"
+              class="hidden absolute top-full right-0 mt-1 w-[104px] bg-white rounded-lg border border-[rgba(79,55,138,0.14)] shadow-[0_0_16px_2px_rgba(66,21,74,0.11)] z-10"
+            >
+              <button
+                class="currency-option w-full px-3 py-2 text-left text-xs font-medium text-[#4c2b5e] hover:bg-gray-50 rounded-t-lg"
+                data-currency="GBP"
+                data-symbol="£"
               >
+                GBP (£)
+              </button>
+              <button
+                class="currency-option w-full px-3 py-2 text-left text-xs font-medium text-[#4c2b5e] hover:bg-gray-50"
+                data-currency="USD"
+                data-symbol="$"
+              >
+                USD ($)
+              </button>
+              <button
+                class="currency-option w-full px-3 py-2 text-left text-xs font-medium text-[#4c2b5e] hover:bg-gray-50 rounded-b-lg"
+                data-currency="EUR"
+                data-symbol="€"
+              >
+                EUR (€)
+              </button>
             </div>
           </div>
         </div>
-        <!-- plus  Plan Card -->
+
         <div
-          class="relative plus-card w-full h-auto md:h-[490px] rounded-xl shadow-lg overflow-hidden md:-mt-8"
-          style="
-            background: linear-gradient(
-              165.66deg,
-              #64357d 2.97%,
-              #392949 89.82%
-            );
-          "
+          class="w-full flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-7 mt-6"
         >
-          <!-- Best Value Badge -->
-          <div
-            class="absolute top-3 right-3 flex items-center gap-1.5 bg-[#FFE59A26] rounded-lg px-2.5 py-1 z-10"
-          >
-            <!-- Star Icon -->
-            <i data-lucide="star" class="w-3 h-3 text-[#FFC720] fill-[#FFC720]"></i>
-            <span class="text-[13px] font-bold text-[#FFC720]"
-              >Best Value</span
-            >
+          <div class="flex items-center gap-1">
+            <!-- Check Icon -->
+            <img src="./assets/check.svg" alt="Check" class="w-4 h-4" />
+            <!-- Feature Text -->
+            <span class="text-sm md:text-base font-semibold text-[#2B233A]">
+              All core features included
+            </span>
           </div>
 
-          <!-- Card Content -->
-          <div class="px-6 pt-6 md:pt-8 pb-0 flex flex-col gap-4">
-            <div>
-              <!-- Plan Title -->
+          <div class="flex items-center gap-1">
+            <img src="./assets/check.svg" alt="Check" class="w-4 h-4" />
+
+            <span class="text-sm md:text-base font-semibold text-[#2B233A]">
+              Free onboarding & Support
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative w-full pt-8 pb-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pricing-grid gap-4 sm:gap-6 lg:mb-[-160px]"
+        >
+          <!-- Free Plan Card -->
+          <div
+            class="relative w-full h-auto md:h-[430px] bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <!-- Card Content -->
+            <div
+              class="px-5 sm:px-6 pt-5 sm:pt-6 pb-0 flex flex-col gap-4 sm:gap-5"
+            >
               <div>
-                <i data-lucide="crown" class="w-6 h-6" style="color: #FFCC37; fill: #FFCC37;"></i>
-              </div>
-              <h3 class="text-[24px] font-bold text-white mb-1">
-                Plus <span class="font-normal"> plan </span>
-              </h3>
-
-              <!-- Price -->
-              <p class="text-lg font-semibold text-white">
-                <span class="price-display" data-annual-price="79" data-monthly-price="99">£79</span> /month
-              </p>
-            </div>
-
-            <div class="mt-[3px]">
-              <!-- Key Feature -->
-              <div class="text-start my-4 md:my-6">
+                <!-- Badge - Free forever -->
                 <div
-                  class="text-[32px] md:text-[40px] font-bold mb-1 gradient-text-plus mb-[-5px] whitespace-nowrap"
+                  class="absolute top-2 right-5 flex items-center gap-1.5 bg-[#E8F5E9] rounded-md px-2.5 py-1"
                 >
-                  750 bookings
+                  <!-- Star Icon -->
+                  <i
+                    data-lucide="star"
+                    class="w-3 h-3 text-[#3AA95D] fill-[#3AA95D]"
+                  ></i>
+
+                  <span class="text-[13px] font-bold text-[#3AA95D]"
+                    >Free forever</span
+                  >
                 </div>
-                <p
-                  class="text-sm md:text-base font-semibold gradient-text-plus"
+
+                <!-- Plan Title -->
+                <h3
+                  class="text-[22px] sm:text-[24px] font-bold text-[#2B233A] mb-1"
                 >
+                  Free <span class="font-normal"> plan </span>
+                </h3>
+
+                <!-- Price -->
+                <p class="text-base sm:text-lg font-semibold text-[#2B233A8C]">
+                  <span
+                    class="price-display"
+                    data-annual-price="0"
+                    data-monthly-price="0"
+                    >£0</span
+                  >
                   /month
                 </p>
               </div>
 
-              <!-- CTA Button -->
-              <div class="mb-6">
-                <button
-                  class="w-full h-12 bg-[#FFC720] rounded-lg text-[#4C2B5E] font-bold text-base shadow-md hover:shadow-lg transition-shadow"
-                >
-                  Start for free
-                </button>
+              <div>
+                <!-- Key Feature -->
+                <div class="text-start my-4 sm:my-6">
+                  <div
+                    class="text-[32px] sm:text-[40px] font-bold mb-1 gradient-text whitespace-nowrap mb-[-5px]"
+                  >
+                    25 bookings
+                  </div>
+                  <p class="text-sm sm:text-base font-semibold gradient-text">
+                    /month
+                  </p>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="mb-6">
+                  <button
+                    class="w-full h-11 sm:h-12 bg-gradient-to-r from-[#66BB6A] to-[#4CAF50] rounded-lg text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    Start for free
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Footer Section -->
+            <!-- Footer Section -->
+            <div
+              class="bg-[#E8F5E9] px-5 sm:px-6 py-4 flex items-center gap-2 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0 pb-6 sm:pb-20"
+            >
+              <i
+                data-lucide="check"
+                class="w-3 h-4 text-[#2B233A]"
+                stroke-width="3"
+              ></i>
+              <span class="text-sm font-normal text-[#2B233A]"
+                >No credit card required</span
+              >
+            </div>
+          </div>
+          <!-- Basic  Plan Card -->
           <div
-            class="relative px-5 sm:px-6 py-4 pb-10 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
+            class="relative w-full h-auto md:h-[430px] bg-white rounded-xl shadow-lg overflow-hidden"
           >
-            <!-- Overlay -->
-            <div class="absolute inset-0 bg-[#EAE1F3]/10"></div>
-            <!-- Content -->
-            <div class="relative z-10 flex flex-col gap-3 mb-1">
-              <div class="flex items-center gap-2 ">
-                <i data-lucide="check" class="w-3 h-4 text-white" stroke-width="3"></i>
-                <span class="text-sm font-normal text-white"
+            <!-- Card Content -->
+            <div
+              class="px-5 sm:px-6 pt-5 sm:pt-6 pb-0 flex flex-col gap-4 sm:gap-5"
+            >
+              <div>
+                <!-- Plan Title -->
+                <h3
+                  class="text-[22px] sm:text-[24px] font-bold text-[#2B233A] mb-1"
+                >
+                  Basic <span class="font-normal"> plan </span>
+                </h3>
+
+                <!-- Price -->
+                <p class="text-base sm:text-lg font-semibold text-[#2B233A8C]">
+                  <span
+                    class="price-display"
+                    data-annual-price="39"
+                    data-monthly-price="49"
+                    >£39</span
+                  >
+                  /month
+                </p>
+              </div>
+
+              <div>
+                <!-- Key Feature -->
+                <div class="text-start my-4 sm:my-6">
+                  <div
+                    class="text-[32px] sm:text-[40px] font-bold mb-1 gradient-text-purple whitespace-nowrap mb-[-5px]"
+                  >
+                    350 bookings
+                  </div>
+                  <p
+                    class="text-sm sm:text-base font-semibold gradient-text-purple"
+                  >
+                    /month
+                  </p>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="mb-6">
+                  <button
+                    class="w-full h-11 sm:h-12 rounded-lg text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-shadow"
+                    style="
+                      background: linear-gradient(
+                        130.58deg,
+                        #83429b 31.38%,
+                        #392949 131.92%
+                      );
+                    "
+                  >
+                    Start for free
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Section -->
+            <div
+              class="bg-[#EAE1F366] px-5 sm:px-6 py-4 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
+            >
+              <div class="flex items-center gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-3 h-4 text-[#2B233A]"
+                  stroke-width="3"
+                ></i>
+                <span class="text-sm font-normal text-[#2B233A]"
                   >90-day money-back guarantee</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3 h-4 text-white" stroke-width="3"></i>
-                <span class="text-sm font-normal text-white"
+                <i
+                  data-lucide="check"
+                  class="w-3 h-4 text-[#2B233A]"
+                  stroke-width="3"
+                ></i>
+                <span class="text-sm font-normal text-[#2B233A]"
                   >Pause or cancel anytime</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3 h-4 text-white" stroke-width="3"></i>
-                <span class="text-sm font-normal text-white"
+                <i
+                  data-lucide="check"
+                  class="w-3 h-4 text-[#2B233A]"
+                  stroke-width="3"
+                ></i>
+                <span class="text-sm font-normal text-[#2B233A]"
+                  >No commission. No cover fees</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- plus  Plan Card -->
+          <div
+            class="relative plus-card w-full h-auto md:h-[490px] rounded-xl shadow-lg overflow-hidden md:-mt-8"
+            style="
+              background: linear-gradient(
+                165.66deg,
+                #64357d 2.97%,
+                #392949 89.82%
+              );
+            "
+          >
+            <!-- Best Value Badge -->
+            <div
+              class="absolute top-3 right-3 flex items-center gap-1.5 bg-[#FFE59A26] rounded-lg px-2.5 py-1 z-10"
+            >
+              <!-- Star Icon -->
+              <i
+                data-lucide="star"
+                class="w-3 h-3 text-[#FFC720] fill-[#FFC720]"
+              ></i>
+              <span class="text-[13px] font-bold text-[#FFC720]"
+                >Best Value</span
+              >
+            </div>
+
+            <!-- Card Content -->
+            <div class="px-6 pt-6 md:pt-8 pb-0 flex flex-col gap-4">
+              <div>
+                <!-- Plan Title -->
+                <div>
+                  <i
+                    data-lucide="crown"
+                    class="w-6 h-6"
+                    style="color: #ffcc37; fill: #ffcc37"
+                  ></i>
+                </div>
+                <h3 class="text-[24px] font-bold text-white mb-1">
+                  Plus <span class="font-normal"> plan </span>
+                </h3>
+
+                <!-- Price -->
+                <p class="text-lg font-semibold text-white">
+                  <span
+                    class="price-display"
+                    data-annual-price="79"
+                    data-monthly-price="99"
+                    >£79</span
+                  >
+                  /month
+                </p>
+              </div>
+
+              <div class="mt-[3px]">
+                <!-- Key Feature -->
+                <div class="text-start my-4 md:my-6">
+                  <div
+                    class="text-[32px] md:text-[40px] font-bold mb-1 gradient-text-plus mb-[-5px] whitespace-nowrap"
+                  >
+                    750 bookings
+                  </div>
+                  <p
+                    class="text-sm md:text-base font-semibold gradient-text-plus"
+                  >
+                    /month
+                  </p>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="mb-6">
+                  <button
+                    class="w-full h-12 bg-[#FFC720] rounded-lg text-[#4C2B5E] font-bold text-base shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    Start for free
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Section -->
+            <div
+              class="relative px-5 sm:px-6 py-4 pb-10 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
+            >
+              <!-- Overlay -->
+              <div class="absolute inset-0 bg-[rgba(234,225,243,1)]/10"></div>
+              <!-- Content -->
+              <div class="relative z-10 flex flex-col gap-3 mb-1">
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 h-4 text-white"
+                    stroke-width="3"
+                  ></i>
+                  <span class="text-sm font-normal text-white"
+                    >90-day money-back guarantee</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 h-4 text-white"
+                    stroke-width="3"
+                  ></i>
+                  <span class="text-sm font-normal text-white"
+                    >Pause or cancel anytime</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 h-4 text-white"
+                    stroke-width="3"
+                  ></i>
+                  <span class="text-sm font-normal text-white"
+                    >No commission. No cover fees</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Unlimited  Plan Card -->
+          <div
+            class="relative w-full h-auto md:h-[430px] bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <!-- Card Content -->
+            <div
+              class="px-5 sm:px-6 pt-5 sm:pt-6 pb-0 flex flex-col gap-4 sm:gap-5"
+            >
+              <div>
+                <!-- Plan Title -->
+                <h3
+                  class="text-[22px] sm:text-[24px] font-bold text-[#2B233A] mb-1"
+                >
+                  Unlimited <span class="font-normal"> plan </span>
+                </h3>
+
+                <!-- Price -->
+                <p class="text-base sm:text-lg font-semibold text-[#2B233A8C]">
+                  <span
+                    class="price-display"
+                    data-annual-price="119"
+                    data-monthly-price="149"
+                    >£119</span
+                  >
+                  /month
+                </p>
+              </div>
+
+              <div>
+                <!-- Key Feature -->
+                <div class="text-start my-4 sm:my-6">
+                  <div
+                    class="text-[32px] sm:text-[40px] font-bold mb-1 gradient-text-purple mb-[-5px]"
+                  >
+                    Unlimited
+                  </div>
+                  <p
+                    class="text-sm sm:text-base font-semibold gradient-text-purple"
+                  >
+                    bookings /month
+                  </p>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="mb-6">
+                  <button
+                    class="w-full h-11 sm:h-12 rounded-lg text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-shadow"
+                    style="
+                      background: linear-gradient(
+                        130.58deg,
+                        #83429b 31.38%,
+                        #392949 131.92%
+                      );
+                    "
+                  >
+                    Start for free
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Section -->
+            <div
+              class="bg-[#EAE1F366] px-5 sm:px-6 py-4 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
+            >
+              <div class="flex items-center gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-3 h-4 text-[#2B233A]"
+                  stroke-width="3"
+                ></i>
+                <span class="text-sm font-normal text-[#2B233A]"
+                  >90-day money-back guarantee</span
+                >
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-3 h-4 text-[#2B233A]"
+                  stroke-width="3"
+                ></i>
+                <span class="text-sm font-normal text-[#2B233A]"
+                  >Pause or cancel anytime</span
+                >
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-3 h-4 text-[#2B233A]"
+                  stroke-width="3"
+                ></i>
+                <span class="text-sm font-normal text-[#2B233A]"
                   >No commission. No cover fees</span
                 >
               </div>
             </div>
           </div>
         </div>
-        <!-- Unlimited  Plan Card -->
-        <div
-          class="relative w-full h-auto md:h-[430px] bg-white rounded-xl shadow-lg overflow-hidden"
-        >
-          <!-- Card Content -->
-          <div
-            class="px-5 sm:px-6 pt-5 sm:pt-6 pb-0 flex flex-col gap-4 sm:gap-5"
-          >
-            <div>
-              <!-- Plan Title -->
-              <h3
-                class="text-[22px] sm:text-[24px] font-bold text-[#2B233A] mb-1"
-              >
-                Unlimited <span class="font-normal"> plan </span>
-              </h3>
+      </div>
+    </section>
 
-              <!-- Price -->
-              <p class="text-base sm:text-lg font-semibold text-[#2B233A8C]">
-                <span class="price-display" data-annual-price="119" data-monthly-price="149">£119</span> /month
-              </p>
-            </div>
+    <section
+      class="relative w-full bg-[#D6B9EB33] rounded-none lg:rounded-[28px] pb-16 md:pt-48 pt-6 z-[-1] container mx-auto px-4 lg:px-0"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex justify-center mb-4">
+            <button
+              class="bg-[#E4D6F2] text-[#4C2B5E] font-bold text-xs px-4 py-2 rounded-[50px]"
+            >
+              CORE FEATURES
+            </button>
+          </div>
 
-            <div>
-              <!-- Key Feature -->
-              <div class="text-start my-4 sm:my-6">
-                <div
-                  class="text-[32px] sm:text-[40px] font-bold mb-1 gradient-text-purple mb-[-5px]"
-                >
-                  Unlimited
+          <div class="flex flex-col items-center gap-6">
+            <h2
+              class="text-[28px] font-bold text-[#2B233A] text-center mx-auto"
+            >
+              Included in every plan.
+              <span class="font-normal">
+                All you need to run a successful restaurant
+              </span>
+            </h2>
+
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+            >
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Real-time availability</span
+                  >
                 </div>
-                <p
-                  class="text-sm sm:text-base font-semibold gradient-text-purple"
-                >
-                  bookings /month
-                </p>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Table management</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Reports & Data analytics</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Hours and service controls</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Flag bad guests</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Multiple user roles</span
+                  >
+                </div>
               </div>
 
-              <!-- CTA Button -->
-              <div class="mb-6">
-                <button
-                  class="w-full h-11 sm:h-12 rounded-lg text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-shadow"
-                  style="
-                    background: linear-gradient(
-                      130.58deg,
-                      #83429b 31.38%,
-                      #392949 131.92%
-                    );
-                  "
-                >
-                  Start for free
-                </button>
+              <!-- Column 2 -->
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Smart floor plan and scheduling</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Mobile & Tablet app</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Customisable notifications</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Guest CRM</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Multiple languages</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Feedback & Reviews</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Export your data anytime</span
+                  >
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >E-mail booking reminders</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >MailChimp integration</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Customisable booking limits</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Auto or manual accept</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Multiple areas</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >No-show protection</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Export & Import booking data</span
+                  >
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Smart reviews solicitation</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Online booking form and widget</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Booking schedule</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Spam bookings protection</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >Custom booking reminders</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"
+                  ></i>
+                  <span class="text-base font-semibold text-[#2B233A]"
+                    >GDPR compliant</span
+                  >
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Footer Section -->
-          <div
-            class="bg-[#EAE1F366] px-5 sm:px-6 py-4 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
-          >
-            <div class="flex items-center gap-2">
-              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
-              <span class="text-sm font-normal text-[#2B233A]"
-                >90-day money-back guarantee</span
+          <div class="flex justify-end">
+            <a
+              href="#"
+              class="text-[#4c2b5e] font-semibold text-sm hover:underline flex items-center gap-1 underline"
+            >
+              View all features
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
-              <span class="text-sm font-normal text-[#2B233A]"
-                >Pause or cancel anytime</span
-              >
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
-              <span class="text-sm font-normal text-[#2B233A]"
-                >No commission. No cover fees</span
-              >
-            </div>
+                <path
+                  d="M6 12L10 8L6 4"
+                  stroke="#4c2b5e"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
- 
-  <section
-    class="relative w-full bg-[#D6B9EB33] rounded-none lg:rounded-[28px] pb-16 md:pt-48 pt-6 z-[-1] container mx-auto px-4 lg:px-0"
-  >
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-      
-        <div class="flex justify-center mb-4">
-          <button
-            class="bg-[#E4D6F2] text-[#4C2B5E] font-bold text-xs px-4 py-2 rounded-[50px]"
+    </section>
+    <!-- Paid Add-ons -->
+    <section class="flex justify-center md:py-[100px] py-10">
+      <div class="max-w-6xl md:mx-auto mx-4">
+        <!-- Badge -->
+        <div class="flex items-center justify-start rounded-full mb-3">
+          <p
+            class="text-[rgba(76,43,94,1)] font-bold text-xs w-[131px] bg-[rgba(228,214,242,1)] h-[34px] flex items-center justify-center rounded-full px-[18px] py-[13px] uppercase text-center"
           >
-            CORE FEATURES
-          </button>
+            Paid Add-ons
+          </p>
         </div>
 
-        <div class="flex flex-col items-center gap-6">
-      
-          <h2
-            class="text-[28px] font-bold text-[#2B233A] text-center mx-auto"
-          >
-            Included in every plan.
-            <span class="font-normal">
-              All you need to run a successful restaurant
-            </span>
-          </h2>
+        <!-- Heading -->
+        <h1
+          class="text-3xl font-semibold text-start text-[rgba(43,35,58,1)] mb-4"
+        >
+          Start simple, add more power
+          <span class="font-normal">when you need it</span>
+        </h1>
 
-    
+        <p class="text-start text-base text-[rgba(43,35,58,0.7)] mb-8">
+          Optional paid-ons to enhance your experience
+        </p>
+
+        <!-- GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[10px]">
+          <!-- CARD 1 -->
           <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
           >
-           
-            <div class="flex flex-col gap-4">
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Real-time availability</span
-                >
+            <div class="flex justify-between items-start w-full">
+              <!-- FIXED SIZE LOGO -->
+              <div
+                class="w-[36px] h-[36px] bg-[rgba(99,91,255,1)] flex items-center justify-center rounded-md mt-2"
+              >
+                <i data-lucide="credit-card" class="w-5 h-5 text-white"></i>
               </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Table management</span
+
+              <div class="flex space-x-1">
+                <div
+                  class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 h-[23px]"
                 >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Reports & Data analytics</span
+                  <i
+                    data-lucide="heart"
+                    class="w-3 h-3 bg-[linear-gradient(130.58deg,#83429B_0%,#392949_100%)] bg-clip-text text-transparent fill-[#83429B]"
+                  ></i>
+                  <span
+                    class="bg-[linear-gradient(130.58deg,#83429B_0%,#392949_100%)] bg-clip-text text-transparent text-[13px] font-semibold"
+                    >Popular</span
+                  >
+                </div>
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
                 >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Hours and service controls</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Flag bad guests</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Multiple user roles</span
-                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£9.99 /mo</span
+                  >
+                </div>
               </div>
             </div>
 
-            <!-- Column 2 -->
-            <div class="flex flex-col gap-4">
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Smart floor plan and scheduling</span
-                >
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Deposits & No-show fees via Stripe
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Secure cards, take deposits, and charge no-show fees
+            </p>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] border border-[#E7E7E7] flex items-center justify-center rounded-md mt-2"
+              >
+                <i data-lucide="chrome" class="w-5 h-5 text-[#83429B]"></i>
               </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Mobile & Tablet app</span
+
+              <div class="flex space-x-1">
+                <div
+                  class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 h-[23px]"
                 >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Customisable notifications</span
+                  <i
+                    data-lucide="heart"
+                    class="w-3 h-3 bg-[linear-gradient(130.58deg,#83429B_0%,#392949_100%)] bg-clip-text text-transparent fill-[#83429B]"
+                  ></i>
+                  <span
+                    class="bg-[linear-gradient(130.58deg,#83429B_0%,#392949_100%)] bg-clip-text text-transparent text-[13px] font-semibold"
+                    >Popular</span
+                  >
+                </div>
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
                 >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Guest CRM</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Multiple languages</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Feedback & Reviews</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Export your data anytime</span
-                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£6.99 /mo</span
+                  >
+                </div>
               </div>
             </div>
 
-           
-            <div class="flex flex-col gap-4">
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >E-mail booking reminders</span
-                >
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Reserve with Google
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Let guests book from your Google Business profile
+            </p>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] bg-[rgba(234,225,243,1)] flex items-center justify-center rounded-md mt-2"
+              >
+                <i
+                  data-lucide="clipboard-check"
+                  class="w-5 h-5 text-purple-700"
+                ></i>
               </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >MailChimp integration</span
+
+              <div class="flex space-x-1">
+                <div
+                  class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 h-[23px]"
                 >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Customisable booking limits</span
+                  <i
+                    data-lucide="heart"
+                    class="w-3 h-3 bg-[linear-gradient(130.58deg,#83429B_0%,#392949_100%)] bg-clip-text text-transparent fill-[#83429B]"
+                  ></i>
+                  <span
+                    class="bg-[linear-gradient(130.58deg,#83429B_0%,#392949_100%)] bg-clip-text text-transparent text-[13px] font-semibold"
+                    >Popular</span
+                  >
+                </div>
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
                 >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Auto or manual accept</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Multiple areas</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >No-show protection</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Export & Import booking data</span
-                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£6.99 /mo</span
+                  >
+                </div>
               </div>
             </div>
 
-          
-            <div class="flex flex-col gap-4">
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Smart reviews solicitation</span
-                >
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Customisable design
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Match the platforms & booking widget to your brand
+            </p>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] border border-[#E7E7E7] flex items-center justify-center rounded-md mt-2"
+              >
+                <i data-lucide="facebook" class="w-5 h-5 text-[#83429B]"></i>
               </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Online booking form and widget</span
+
+              <div class="flex space-x-1">
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
                 >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Booking schedule</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Spam bookings protection</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >Custom booking reminders</span
-                >
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
-                <span class="text-base font-semibold text-[#2B233A]"
-                  >GDPR compliant</span
-                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£3.49 /mo</span
+                  >
+                </div>
               </div>
             </div>
+
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Meta Pixel integration
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Track bookings from ads and retarget drop-offs
+            </p>
+          </div>
+
+          <!-- CARD 5 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] bg-[rgba(234,225,243,1)] flex items-center justify-center rounded-md mt-2"
+              >
+                <img
+                  src="./assets/titi.svg"
+                  class="max-w-full max-h-full object-contain"
+                />
+              </div>
+
+              <div class="flex space-x-1">
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
+                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£6.99 /mo</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Custom booking form fields
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Add your own questions to the booking form
+            </p>
+          </div>
+
+          <!-- CARD 6 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] border border-[#E7E7E7] flex items-center justify-center rounded-md mt-2"
+              >
+                <i data-lucide="bell" class="w-5 h-5 text-purple-700"></i>
+              </div>
+
+              <div class="flex space-x-1">
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
+                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£3.49 /mo</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Google Analytics integration
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              See booking traffic and conversion in your analytics
+            </p>
+          </div>
+
+          <!-- CARD 7 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] bg-[rgba(234,225,243,1)] flex items-center justify-center rounded-md mt-2"
+              >
+                <i data-lucide="map-pin" class="w-5 h-5 text-purple-700"></i>
+              </div>
+
+              <div class="flex space-x-1">
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
+                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£9.99 /mo</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Multiple locations
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Manage locations & let guests choose where to book
+            </p>
+          </div>
+
+          <!-- CARD 8 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] bg-[rgba(234,225,243,1)] flex items-center justify-center rounded-md mt-2"
+              >
+                <i data-lucide="code" class="w-5 h-5 text-purple-700"></i>
+              </div>
+
+              <div class="flex space-x-1">
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
+                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£9.99 /mo</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Full API access
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Sync ResOS with your own tools and systems
+            </p>
+          </div>
+
+          <!-- CARD 9 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] bg-[rgba(234,225,243,1)] flex items-center justify-center rounded-md mt-2"
+              >
+                <i
+                  data-lucide="message-square"
+                  class="w-5 h-5 text-purple-700"
+                ></i>
+              </div>
+
+              <div class="flex space-x-1">
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
+                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£0.40 /SMS</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              SMS confirmations
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Get guests to confirm by text they're coming
+            </p>
+          </div>
+
+          <!-- CARD 10 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] border border-[#E7E7E7] flex items-center justify-center rounded-md mt-2"
+              >
+                <i data-lucide="users" class="w-5 h-5 text-[#83429B]"></i>
+              </div>
+
+              <div class="flex space-x-1">
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
+                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£9.99 /mo</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Reserve with Facebook & Instagram
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Add "Book now" to social profiles
+            </p>
+          </div>
+
+          <!-- CARD 11 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] bg-[rgba(234,225,243,1)] flex items-center justify-center rounded-md mt-2"
+              >
+                <i
+                  data-lucide="clipboard-check"
+                  class="w-5 h-5 text-purple-700"
+                ></i>
+              </div>
+
+              <div class="flex space-x-1">
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
+                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£6.99 /mo</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Online waitlist
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Let guests join a digital waitlist when you're full
+            </p>
+          </div>
+
+          <!-- CARD 12 -->
+          <div
+            class="bg-white border border-[#4F378A24] rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] pb-6 pt-2 px-4 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start w-full">
+              <div
+                class="w-[36px] h-[36px] bg-[rgba(234,225,243,1)] flex items-center justify-center rounded-md mt-2"
+              >
+                <i data-lucide="bell" class="w-5 h-5 text-purple-700"></i>
+              </div>
+
+              <div class="flex space-x-1">
+                <div
+                  class="bg-[rgba(214,185,235,0.2)] flex items-center justify-center rounded-md px-2 py-1 h-[23px]"
+                >
+                  <span class="text-[#4C2B5E] text-[13px] font-semibold"
+                    >£0.40 /SMS</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-base font-semibold text-[rgba(43,35,58,1)] pt-4">
+              Custom reminders
+            </h2>
+            <p class="text-xs text-[rgba(43,35,58,1)]">
+              Send personalised booking reminders
+            </p>
           </div>
         </div>
 
-     
         <div class="flex justify-end">
           <a
             href="#"
-            class="text-[#4c2b5e] font-semibold text-sm hover:underline flex items-center gap-1 underline"
+            class="mt-8 text-sm font-bold text-[#4C2B5E] flex items-end"
           >
-            View all features
+            View all add-ons
             <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 ml-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
             >
               <path
-                d="M6 12L10 8L6 4"
-                stroke="#4c2b5e"
-                stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
               />
             </svg>
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="flex justify-center   md:py-[100px] py-10 ">
-    <div class="max-w-6xl md:mx-auto mx-4 ">
-      <div class="flex items-center justify-center bg-[rgba(228,214,242,1)] w-[132px] rounded-full mb-3">
-        <p class="text-[var(--Purple,rgba(76,43,94,1))] font-bold text-xs  px-3 py-4 ">Paid Add-ons</p>
-      </div>
-      <h1 class="text-3xl font-semibold text-start text-[var(--Text-Black,rgba(43,35,58,1))] mb-4">
-        Start simple, add more power <span class="font-normal">when you need it</span>
-      </h1>
-      <p class="text-start  text-base text-[var(--Text-Grey,rgba(43,35,58,0.7))] mb-8">
-        Optional paid-ons to enhance your experience
-      </p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[10px]">
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="bg-[#635BFF] rounded-md px-3 py-1 mt-2">
-              <img src="./assets/pricing_icon.svg" width="14" height="14">
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1">
-                <img src="./assets/heart.svg" alt="Color Icon" width="12" height="1" />
-
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£9.99 /mo</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Deposits & No-show fees via Stripe
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Secure cards, take deposits, and charge no-show fees
-            </p>
-          </div>
+    <!-- Integration -->
+    <section class="bg-white md:py-[100px] py-10 flex justify-center">
+      <div class="max-w-6xl md:mx-auto mx-4 md:px-10 px-0">
+        <div class="flex items-center justify-start rounded-full mb-3">
+          <p
+            class="text-[rgba(76,43,94,1)] font-bold text-xs w-[131px] bg-[rgba(228,214,242,1)] h-[34px] flex items-center justify-center rounded-full px-[18px] py-[13px] uppercase text-center"
+          >
+            Integrations
+          </p>
         </div>
 
-        <!-- Card 2 -->
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="border border-[rgba(231,231,231,1)] rounded-md px-2 py-1 mt-2">
-              <img src="./assets/google.svg" width="18" height="18">
+        <h2 class="text-3xl font-bold text-start text-[rgba(43,35,58,1)] my-3">
+          <span class="font-normal">Connect resOS with your </span>favorite
+          tools and platforms
+        </h2>
 
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1">
-                <img src="./assets/heart.svg" alt="Color Icon" width="12" height="12" />
+        <!-- Logos Wrapper -->
+        <div class="flex flex-wrap md:flex-nowrap gap-4 justify-center mt-3">
+          <div
+            class="border border-[#E3E3E3] rounded-xl px-4 py-2 flex justify-center items-center w-full md:w-auto"
+          >
+            <img src="./assets/reserved.svg" class="h-8 w-auto" />
+          </div>
 
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£6.99 /mo</span>
-              </div>
-            </div>
+          <div
+            class="border border-[#E3E3E3] rounded-xl px-4 py-2 flex justify-center items-center w-full md:w-auto"
+          >
+            <img src="./assets/Zapier.svg" class="h-8 w-auto" />
           </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Reserve with Google
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Let guests book from your Google Business profile
-            </p>
-          </div>
-        </div>
 
-     
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="bg-[#EAE1F3] rounded-md px-2 py-1 mt-2">
-              <img src="./assets/color.svg" alt="Color Icon" width="18" height="18" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1">
-                <img src="./assets/heart.svg" alt="Color Icon" width="12" height="1" />
+          <div
+            class="border border-[#E3E3E3] rounded-xl px-4 py-2 flex justify-center items-center w-full md:w-auto"
+          >
+            <img src="./assets/Facebook.svg" class="h-8 w-auto" />
+          </div>
 
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£6.99 /mo</span>
-              </div>
-            </div>
+          <div
+            class="border border-[#E3E3E3] rounded-xl px-4 py-2 flex justify-center items-center w-full md:w-auto"
+          >
+            <img src="./assets/Mailchimp.svg" class="h-8 w-auto" />
           </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Customisable design
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Match the platforms & booking widget to your brand
-            </p>
-          </div>
-        </div>
 
-    
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="border border-[rgba(231,231,231,1)] rounded-md px-2 py-2 mt-2">
-              <img src="./assets/meta.svg" alt="Meta Icon" width="22" height="21" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 spacex-1 hidden">
+          <div
+            class="border border-[#E3E3E3] rounded-xl px-4 py-2 flex justify-center items-center w-full md:w-auto"
+          >
+            <img src="./assets/Format3.svg" class="h-8 w-auto" />
+          </div>
 
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£3.49 /mo</span>
-              </div>
-            </div>
+          <div
+            class="border border-[#E3E3E3] rounded-xl px-4 py-2 flex justify-center items-center w-full md:w-auto"
+          >
+            <img src="./assets/Stripe.svg" class="h-8 w-auto" />
           </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Meta Pixel integration
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Track bookings from ads and retarget drop-offs
-            </p>
-          </div>
-        </div>
 
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="bg-[#EAE1F3] rounded-md px-2 py-2 mt-2">
-              <img src="./assets/titi.svg" alt="Titi Icon" width="19" height="18" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 hidden">
-                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.147 7.76596C4.80246 8.07876 4.27205 8.07876 3.92752 7.76143L3.87765 7.71609C1.49763 5.56274 -0.0573149 4.15286 0.00161889 2.39392C0.0288191 1.62324 0.423222 0.884304 1.06243 0.4491C2.25924 -0.366907 3.73712 0.0138967 4.53499 0.947771C5.33286 0.0138967 6.81074 -0.37144 8.00755 0.4491C8.64676 0.884304 9.04116 1.62324 9.06836 2.39392C9.13183 4.15286 7.57235 5.56274 5.19233 7.72516L5.147 7.76596Z"
-                    fill="url(#paint0_linear_1_372)" />
-                  <defs>
-                    <linearGradient id="paint0_linear_1_372" x1="0.583086" y1="-3.04762" x2="13.238" y2="9.24297"
-                      gradientUnits="userSpaceOnUse">
-                      <stop offset="0.311563" stop-color="#83429B" />
-                      <stop offset="1" stop-color="#392949" />
-                    </linearGradient>
-                  </defs>
-                </svg>2
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£6.99 /mo</span>
-              </div>
-            </div>
+          <div
+            class="border border-[#E3E3E3] rounded-xl px-4 py-2 flex justify-center items-center w-full md:w-auto"
+          >
+            <img src="./assets/image16.svg" class="h-8 w-auto" />
           </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Custom booking form fields
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Add your own questions to the booking form
-            </p>
-          </div>
-        </div>
 
-     
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="border border-[rgba(231,231,231,1)] rounded-md px-2 py-1 mt-2">
-              <img src="./assets/newAnalytic.svg" alt="Analytics Icon" width="18" height="18" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 hidden">
-                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.147 7.76596C4.80246 8.07876 4.27205 8.07876 3.92752 7.76143L3.87765 7.71609C1.49763 5.56274 -0.0573149 4.15286 0.00161889 2.39392C0.0288191 1.62324 0.423222 0.884304 1.06243 0.4491C2.25924 -0.366907 3.73712 0.0138967 4.53499 0.947771C5.33286 0.0138967 6.81074 -0.37144 8.00755 0.4491C8.64676 0.884304 9.04116 1.62324 9.06836 2.39392C9.13183 4.15286 7.57235 5.56274 5.19233 7.72516L5.147 7.76596Z"
-                    fill="url(#paint0_linear_1_372)" />
-                  <defs>
-                    <linearGradient id="paint0_linear_1_372" x1="0.583086" y1="-3.04762" x2="13.238" y2="9.24297"
-                      gradientUnits="userSpaceOnUse">
-                      <stop offset="0.311563" stop-color="#83429B" />
-                      <stop offset="1" stop-color="#392949" />
-                    </linearGradient>
-                  </defs>
-                </svg>2
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£3.49 /mo</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Google Analytics integration
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              See booking traffic and conversion in your analytics
-            </p>
-          </div>
-        </div>
-
-   
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="bg-[#EAE1F3] rounded-md px-2 py-3 mt-2">
-              <img src="./assets/location.svg" alt="Location Icon" width="23" height="19" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 hidden">
-                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.147 7.76596C4.80246 8.07876 4.27205 8.07876 3.92752 7.76143L3.87765 7.71609C1.49763 5.56274 -0.0573149 4.15286 0.00161889 2.39392C0.0288191 1.62324 0.423222 0.884304 1.06243 0.4491C2.25924 -0.366907 3.73712 0.0138967 4.53499 0.947771C5.33286 0.0138967 6.81074 -0.37144 8.00755 0.4491C8.64676 0.884304 9.04116 1.62324 9.06836 2.39392C9.13183 4.15286 7.57235 5.56274 5.19233 7.72516L5.147 7.76596Z"
-                    fill="url(#paint0_linear_1_372)" />
-                  <defs>
-                    <linearGradient id="paint0_linear_1_372" x1="0.583086" y1="-3.04762" x2="13.238" y2="9.24297"
-                      gradientUnits="userSpaceOnUse">
-                      <stop offset="0.311563" stop-color="#83429B" />
-                      <stop offset="1" stop-color="#392949" />
-                    </linearGradient>
-                  </defs>
-                </svg>2
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£9.99 /mo</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Multiple locations
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Manage locations & let guests choose where to book
-            </p>
-          </div>
-        </div>
-
-     
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="bg-[#EAE1F3] rounded-md px-2 py-3 mt-2">
-              <img src="./assets/api.svg" alt="API Icon" width="21" height="21" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 hidden">
-                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.147 7.76596C4.80246 8.07876 4.27205 8.07876 3.92752 7.76143L3.87765 7.71609C1.49763 5.56274 -0.0573149 4.15286 0.00161889 2.39392C0.0288191 1.62324 0.423222 0.884304 1.06243 0.4491C2.25924 -0.366907 3.73712 0.0138967 4.53499 0.947771C5.33286 0.0138967 6.81074 -0.37144 8.00755 0.4491C8.64676 0.884304 9.04116 1.62324 9.06836 2.39392C9.13183 4.15286 7.57235 5.56274 5.19233 7.72516L5.147 7.76596Z"
-                    fill="url(#paint0_linear_1_372)" />
-                  <defs>
-                    <linearGradient id="paint0_linear_1_372" x1="0.583086" y1="-3.04762" x2="13.238" y2="9.24297"
-                      gradientUnits="userSpaceOnUse">
-                      <stop offset="0.311563" stop-color="#83429B" />
-                      <stop offset="1" stop-color="#392949" />
-                    </linearGradient>
-                  </defs>
-                </svg>2
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£9.99 /mo</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Full API access
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Sync ResoS with your own tools and systems
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="bg-[#EAE1F3] rounded-md px-2 py-3 mt-2">
-              <img src="./assets/sms.svg" alt="SMS Icon" width="20" height="20" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 hidden">
-                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.147 7.76596C4.80246 8.07876 4.27205 8.07876 3.92752 7.76143L3.87765 7.71609C1.49763 5.56274 -0.0573149 4.15286 0.00161889 2.39392C0.0288191 1.62324 0.423222 0.884304 1.06243 0.4491C2.25924 -0.366907 3.73712 0.0138967 4.53499 0.947771C5.33286 0.0138967 6.81074 -0.37144 8.00755 0.4491C8.64676 0.884304 9.04116 1.62324 9.06836 2.39392C9.13183 4.15286 7.57235 5.56274 5.19233 7.72516L5.147 7.76596Z"
-                    fill="url(#paint0_linear_1_372)" />
-                  <defs>
-                    <linearGradient id="paint0_linear_1_372" x1="0.583086" y1="-3.04762" x2="13.238" y2="9.24297"
-                      gradientUnits="userSpaceOnUse">
-                      <stop offset="0.311563" stop-color="#83429B" />
-                      <stop offset="1" stop-color="#392949" />
-                    </linearGradient>
-                  </defs>
-                </svg>2
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£0.40 /SMS</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              SMS confirmations
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Get guests to confirm by text they're coming
-            </p>
-          </div>
-        </div>
-
-      
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="border border-[rgba(231,231,231,1)] rounded-md px-2 py-2 mt-2">
-              <img src="./assets/socialmedia.svg" alt="Social Media Icon" width="18" height="18" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 hidden">
-                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.147 7.76596C4.80246 8.07876 4.27205 8.07876 3.92752 7.76143L3.87765 7.71609C1.49763 5.56274 -0.0573149 4.15286 0.00161889 2.39392C0.0288191 1.62324 0.423222 0.884304 1.06243 0.4491C2.25924 -0.366907 3.73712 0.0138967 4.53499 0.947771C5.33286 0.0138967 6.81074 -0.37144 8.00755 0.4491C8.64676 0.884304 9.04116 1.62324 9.06836 2.39392C9.13183 4.15286 7.57235 5.56274 5.19233 7.72516L5.147 7.76596Z"
-                    fill="url(#paint0_linear_1_372)" />
-                  <defs>
-                    <linearGradient id="paint0_linear_1_372" x1="0.583086" y1="-3.04762" x2="13.238" y2="9.24297"
-                      gradientUnits="userSpaceOnUse">
-                      <stop offset="0.311563" stop-color="#83429B" />
-                      <stop offset="1" stop-color="#392949" />
-                    </linearGradient>
-                  </defs>
-                </svg>2
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£9.99 /mo</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Reserve with Facebook & Instagram
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Add "Book now" to social profiles
-            </p>
-          </div>
-        </div>
-
-       
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="bg-[#EAE1F3] rounded-md px-2 py-1 mt-2">
-              <img src="./assets/waitlist.svg" alt="Waitlist Icon" width="24" height="12" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 hidden">
-                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.147 7.76596C4.80246 8.07876 4.27205 8.07876 3.92752 7.76143L3.87765 7.71609C1.49763 5.56274 -0.0573149 4.15286 0.00161889 2.39392C0.0288191 1.62324 0.423222 0.884304 1.06243 0.4491C2.25924 -0.366907 3.73712 0.0138967 4.53499 0.947771C5.33286 0.0138967 6.81074 -0.37144 8.00755 0.4491C8.64676 0.884304 9.04116 1.62324 9.06836 2.39392C9.13183 4.15286 7.57235 5.56274 5.19233 7.72516L5.147 7.76596Z"
-                    fill="url(#paint0_linear_1_372)" />
-                  <defs>
-                    <linearGradient id="paint0_linear_1_372" x1="0.583086" y1="-3.04762" x2="13.238" y2="9.24297"
-                      gradientUnits="userSpaceOnUse">
-                      <stop offset="0.311563" stop-color="#83429B" />
-                      <stop offset="1" stop-color="#392949" />
-                    </linearGradient>
-                  </defs>
-                </svg>2
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£6.99 /mo</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Online waitlist
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Let guests join a digital waitlist when you're full
-            </p>
-          </div>
-        </div>
-
-      
-        <div
-          class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl shadow-[0_1px_24px_0_rgba(25,33,60,0.08)] relative overflow-hidden pb-6 pt-2 px-4 flex flex-col justify-between h-full w-full">
-          <div class="flex justify-between items-start w-full">
-            <div class="bg-[#EAE1F3] rounded-md px-2 py-1 mt-2">
-              <img src="./assets/bill.svg" alt="Bill Icon" width="20" height="20" />
-            </div>
-            <div class="flex space-x-1">
-              <div class="flex items-center bg-[rgba(228,214,242,1)] rounded-md px-2 py-1 space-x-1 hidden">
-                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.147 7.76596C4.80246 8.07876 4.27205 8.07876 3.92752 7.76143L3.87765 7.71609C1.49763 5.56274 -0.0573149 4.15286 0.00161889 2.39392C0.0288191 1.62324 0.423222 0.884304 1.06243 0.4491C2.25924 -0.366907 3.73712 0.0138967 4.53499 0.947771C5.33286 0.0138967 6.81074 -0.37144 8.00755 0.4491C8.64676 0.884304 9.04116 1.62324 9.06836 2.39392C9.13183 4.15286 7.57235 5.56274 5.19233 7.72516L5.147 7.76596Z"
-                    fill="url(#paint0_linear_1_372)" />
-                  <defs>
-                    <linearGradient id="paint0_linear_1_372" x1="0.583086" y1="-3.04762" x2="13.238" y2="9.24297"
-                      gradientUnits="userSpaceOnUse">
-                      <stop offset="0.311563" stop-color="#83429B" />
-                      <stop offset="1" stop-color="#392949" />
-                    </linearGradient>
-                  </defs>
-                </svg>2
-                <span class="text-[#83429B] text-[13px] font-semibold">Popular</span>
-              </div>
-              <div class="button-price bg-[#D6B9EB33]/60 rounded-md px-2 py-2">
-                <span class="text-[#4C2B5E] text-[13px] font-semibold">£0.40 /SMS</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h2 class="text-base font-semibold text-[var(--Text-Black,rgba(43,35,58,1))] pt-4">
-              Custom reminders
-            </h2>
-            <p class="text-xs text-[var(--Text-Black,rgba(43,35,58,1))]">
-              Send personalised booking reminders
-            </p>
+          <div
+            class="border border-[#E3E3E3] rounded-xl px-4 py-2 flex justify-center items-center w-full md:w-auto"
+          >
+            <img src="./assets/Instagram.svg" class="h-8 w-auto" />
           </div>
         </div>
       </div>
-      <div class="flex justify-end">
-        <a class="flex items-center justify-between"> <a href="#"
-            class="mt-8 text-sm font-bold text-[#4C2B5E] flex items-end">
-            View all add-ons
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-4 h-4 ml-1">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-            </svg>
-          </a>
-      </div>
-    </div>
+    </section>
 
-
-  </section>
-  <!-- Integration -->
-  <section class="bg-white md:py-[100px] py-10 flex justify-center">
-    <div class=" max-w-5xl md:mx-auto mx-4">
-      <div class="flex items-center justify-center bg-[rgba(228,214,242,1)] w-[132px] rounded-full mb-3">
-        <p class="text-[var(--Purple,rgba(76,43,94,1))] font-bold text-xs  px-3 py-4 ">Integrations</p>
-      </div>
-      <h2 class="text-3xl font-bold text-start text-[var(--Text-Black,rgba(43,35,58,1))] my-3"><span class="font-normal">Connect resOS with your
-        </span>favorite tools and platforms</h2>
-
-
-      <!-- sponser -->
-      <div class="grid gap-4 md:grid-cols-8 sm:grid-cols-2 grid-cols-1 mt-3">
-
-        <div
-          class="border border-[rgba(227,227,227,1)] rounded-md p-4 inline-flex justify-center items-center inline-flex justify-center items-center">
-
-
-          <img src="./assets/reserved.svg" >
-
-
+    <!-- Testimonilas -->
+    <section class="md:py-[100px] py-10 flex justify-center">
+      <div class="text-center max-w-6xl md:mx-auto mx-4 md:px-10 px-0">
+        <div class="flex items-center justify-center mb-3">
+          <p
+            class="text-[rgba(76,43,94,1)] font-bold text-xs w-[131px] bg-[rgba(228,214,242,1)] h-[34px] flex items-center justify-center rounded-full px-[18px] py-[13px] uppercase text-center"
+          >
+            Testimonials
+          </p>
         </div>
-        <div
-          class="border border-[rgba(227,227,227,1)] rounded-md p-4 inline-flex justify-center items-center flex justify-center items-center">
-
-
-          <img src="./assets/Zapier.svg" >
-
-
-        </div>
-        <div class="border border-[rgba(227,227,227,1)] rounded-md p-4 inline-flex justify-center items-center">
-
-
-
-          <img src="./assets/Facebook.svg" >
-
-
-
-        </div>
-        <div class="border border-[rgba(227,227,227,1)] rounded-md p-4 inline-flex justify-center items-center">
-
-
-          <img src="./assets/Mailchimp.svg" >
-
-
-        </div>
-        <div class="border border-[rgba(227,227,227,1)] rounded-md p-4 inline-flex justify-center items-center">
-
-
-          <img src="./assets/Format3.svg" >
-
-
-        </div>
-        <div class="border border-[rgba(227,227,227,1)] rounded-md p-4 inline-flex justify-center items-center">
-
-
-          <img src="./assets/Stripe.svg" >
-
-
-        </div>
-        <div class="border border-[rgba(227,227,227,1)] rounded-md p-4 inline-flex justify-center items-center">
-
-
-          <img src="./assets/image16.svg" >
-
-
-        </div>
-        <div class="border border-[rgba(227,227,227,1)] rounded-md p-4 inline-flex justify-center items-center">
-
-
-          <img src="./assets/Instagram.svg" >
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Testimonilas -->
-  <section class=" md:py-[100px] py-10 flex justify-center">
-    <div class="text-center max-w-6xl md:mx-auto mx-4">
-      <div class="flex items-center justify-center mb-3">
-        <p class="text-[var(--Purple,rgba(76,43,94,1))] font-bold text-xs w-[132px] bg-[rgba(228,214,242,1)] rounded-full px-3 py-4 ">Testimonials</p>
-      </div>
-      <h2 class="text-3xl font-semibold text-[var(--Text-Black,rgba(43,35,58,1))]"><span class="font-normal">We are
-          loved by</span> restaurant owners</h2>
-      <p class="text-[var(--Text-Grey,rgba(43,35,58,0.7))] text-base pt-3">See what our customers have to say </p>
-      <div class="sm:flex justify-center gap-5  py-12">
-        <div class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl px-10 pt-8 pb-10 md:mb-0 mb-4">
-          <div>
-
-            <img src="./assets/image11.svg" >
-
-          </div>
-          <p class="text-lg text-[var(--Text-Black,rgba(43,35,58,1))] text-start pb-6 pt-3">Once set up properly, resOS
-            (especially when combined with Google reserve) <span class="font-bold"> will run the whole booking
-              seamlessly.</span> Been trying many softwares and none has reached the level of customization and speed as
-            resOS. And great support too!</p>
-          <div>
-            <div class="flex items-center gap-4 text-start">
-
-              <img src="./assets/image-2.svg" >
-              <div class="text-lg">
-                <h2 class=" font-semibold text-[var(--Text-Black,rgba(43,35,58,1))]">Sophie Moore</h2>
-                <p class="text-[var(--Text-Black,rgba(43,35,58,1))]] ">Santa Rosalia, Toulon, France</p>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-        <div class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl px-10 pt-8 pb-10">
-          <div>
-
-
-            <img src="./assets/image12.svg" class="mb-4" >
-
-
-          </div>
-          <p class="text-lg text-[var(--Text-Black,rgba(43,35,58,1))] text-start pb-6 pt-3"> <span
-              class="font-bold">resOS is the best!</span> I have been using them for a year now. I am in the USA and
-            they never fail to get back to me in a timely manner. I highly recommend this company. If you are looking
-            for a reasonably priced reservation system this is the company.</p>
-          <div>
-            <div class="flex items-center gap-4 text-start">
-
-
-              <img src="./assets/image-4.svg" >
-
-              <div class="text-lg">
-                <h2 class=" font-semibold text-[var(--Text-Black,rgba(43,35,58,1))]">Mike Warren</h2>
-                <p class="text-[var(--Text-Black,rgba(43,35,58,1))]] ">Timbir Alley Restaurant, Littleton, US</p>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Trusted -->
-  <section class="bg-[rgba(214,185,235,0.2)] md:py-[70px] py-10 flex justify-center">
-    <div class=" max-w-6xl md:mx-auto mx-4">
-
-      <h2 class="text-xl  text-center font-normal text-[var(--Text-Black,rgba(43,35,58,1))] my-3"> <span class="font-bold">Trusted by
-          2500+</span>restaurants worldwide</h2>
-
-
-      <div class="grid gap-4 md:grid-cols-8 sm:grid-cols-2 grid-cols-1 mt-6">
-
-        <div
-          class="bg-[rgba(255,255,255,1)] rounded-md px-4 py-1 inline-flex justify-center items-center inline-flex justify-center items-center">
-
-
-          <img src="./assets/pablito.svg" >
-
-
-        </div>
-        <div
-          class="bg-[rgba(255,255,255,1)] rounded-md px-4 py-1 inline-flex justify-center items-center flex justify-center items-center">
-
-
-          <img src="./assets/sun.svg" >
-
-
-        </div>
-        <div class="bg-[rgba(255,255,255,1)] rounded-md px-4 py-1 inline-flex justify-center items-center">
-
-
-
-          <img src="./assets/screw.svg" >
-
-
-
-        </div>
-        <div class="bg-[rgba(255,255,255,1)] rounded-md px-4 py-1 inline-flex justify-center items-center">
-
-
-          <img src="./assets/vgn.svg" >
-
-
-        </div>
-        <div class="bg-[rgba(255,255,255,1)] rounded-md px-4 py-1 inline-flex justify-center items-center">
-
-
-          <img src="./assets/speak.svg" >
-
-
-        </div>
-        <div class="bg-[rgba(255,255,255,1)] rounded-md px-4 py-1 inline-flex justify-center items-center">
-
-
-          <img src="./assets/vegan.svg" >
-
-
-        </div>
-        <div class="bg-[rgba(255,255,255,1)] rounded-md px-4 py-1 inline-flex justify-center items-center">
-
-
-          <img src="./assets/sunnan.svg" >
-
-
-        </div>
-        <div class="bg-[rgba(255,255,255,1)] rounded-md px-4 py-1 inline-flex justify-center items-center">
-
-
-          <img src="./assets/Church.svg" >
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- get ready -->
-  <section>
-    <div class="max-w-5xl md:mx-auto mx-4 md:py-[100px] py-10 flex items-center justify-center">
-      <div class="grid md:grid-cols-12 gap-4 items-center">
-        <div class="col-span-6">
-
-          <img src="./assets/image-3.svg" >
-
-        </div>
-        <div class="col-span-6">
-          <h2 class="text-[rgba(43,35,58,1)] text-5xl font-semibold pb-5">Ready to get started?</h2>
-          <p class="text-[rgba(43,35,58,0.7)] text-lg ">Join thousands of restaurants using our platform to manage
-            bookings and grow their business.</p>
-          <div class="pt-8 md:flex items-center gap-4">
-            <button
-              class="bg-[var(--Yellow,rgba(255,199,32,1))] text-white px-8 py-3 rounded-lg  transition-colors text-lg">Try
-              for free</button>
+        <h2 class="text-3xl font-semibold text-[rgba(43,35,58,1)]">
+          <span class="font-normal">We are loved by</span> restaurant owners
+        </h2>
+        <p class="text-[var(--Text-Grey,rgba(43,35,58,0.7))] text-base pt-3">
+          See what our customers have to say
+        </p>
+        <div class="sm:flex justify-center gap-5 py-12">
+          <div
+            class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl px-10 pt-8 pb-10 md:mb-0 mb-4"
+          >
             <div>
+              <img src="./assets/image11.svg" />
+            </div>
+            <p class="text-lg text-[rgba(43,35,58,1)] text-start pb-6 pt-3">
+              Once set up properly, resOS (especially when combined with Google
+              reserve)
+              <span class="font-bold">
+                will run the whole booking seamlessly.</span
+              >
+              Been trying many softwares and none has reached the level of
+              customization and speed as resOS. And great support too!
+            </p>
+            <div>
+              <div class="flex items-center gap-4 text-start">
+                <img src="./assets/image-2.svg" />
+                <div class="text-lg">
+                  <h2 class="font-semibold text-[rgba(43,35,58,1)]">
+                    Sophie Moore
+                  </h2>
+                  <p class="text-[rgba(43,35,58,0.7)] text-lg">
+                    Santa Rosalia, Toulon, France
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-[#4F378A24] border-opacity-10 rounded-xl px-10 pt-8 pb-10"
+          >
+            <div>
+              <img src="./assets/image12.svg" class="mb-4" />
+            </div>
+            <p class="text-lg text-[rgba(43,35,58,1)] text-start pb-6 pt-3">
+              <span class="font-bold">resOS is the best!</span> I have been
+              using them for a year now. I am in the USA and they never fail to
+              get back to me in a timely manner. I highly recommend this
+              company. If you are looking for a reasonably priced reservation
+              system this is the company.
+            </p>
+            <div>
+              <div class="flex items-center gap-4 text-start">
+                <img src="./assets/image-4.svg" />
 
-              <img src="./assets/imag-1.svg" >
+                <div class="text-lg">
+                  <h2 class="font-semibold text-[rgba(43,35,58,1)]">
+                    Mike Warren
+                  </h2>
+                  <p class="text-[rgba(43,35,58,0.7)] text-lg">
+                    Timbir Alley Restaurant, Littleton, US
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Trusted -->
+    <section
+      class="bg-[rgba(214,185,235,0.2)] md:py-[70px] py-10 flex justify-center"
+    >
+      <div class="max-w-6xl md:mx-auto mx-4">
+        <h2
+          class="text-xl text-center font-normal text-[rgba(43,35,58,1)] my-3"
+        >
+          <span class="font-bold">Trusted by 2500+</span> restaurants worldwide
+        </h2>
 
+        <!-- Logo Container -->
+        <div
+          class="flex flex-wrap lg:flex-nowrap gap-3 justify-center mt-6 md:mx-10 mx-0"
+        >
+          <div
+            class="bg-white rounded-xl px-[19px] py-2 flex justify-center items-center w-full md:w-auto md:h-[103px]"
+          >
+            <img src="./assets/pablito.svg" class="max-h-[60px] w-auto" />
+          </div>
+
+          <div
+            class="bg-white rounded-xl px-[19px] py-2 flex justify-center items-center w-full md:w-auto md:h-[103px]"
+          >
+            <img src="./assets/sun.svg" class="max-h-[60px] w-auto" />
+          </div>
+
+          <div
+            class="bg-white rounded-xl px-[19px] py-2 flex justify-center items-center w-full md:w-auto md:h-[103px]"
+          >
+            <img src="./assets/screw.svg" class="max-h-[60px] w-auto" />
+          </div>
+
+          <div
+            class="bg-white rounded-xl px-[19px] py-2 flex justify-center items-center w-full md:w-auto md:h-[103px]"
+          >
+            <img src="./assets/vgn.svg" class="max-h-[60px] w-auto" />
+          </div>
+
+          <div
+            class="bg-white rounded-xl px-[19px] py-2 flex justify-center items-center w-full md:w-auto md:h-[103px]"
+          >
+            <img src="./assets/speak.svg" class="max-h-[60px] w-auto" />
+          </div>
+
+          <div
+            class="bg-white rounded-xl px-[19px] py-2 flex justify-center items-center w-full md:w-auto md:h-[103px]"
+          >
+            <img src="./assets/vegan.svg" class="max-h-[60px] w-auto" />
+          </div>
+
+          <div
+            class="bg-white rounded-xl px-[19px] py-2 flex justify-center items-center w-full md:w-auto md:h-[103px]"
+          >
+            <img src="./assets/sunnan.svg" class="max-h-[60px] w-auto" />
+          </div>
+
+          <div
+            class="bg-white rounded-xl px-[19px] py-2 flex justify-center items-center w-full md:w-auto md:h-[103px]"
+          >
+            <img src="./assets/Church.svg" class="max-h-[60px] w-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- get ready -->
+    <section>
+      <div
+        class="max-w-5xl md:mx-auto mx-4 md:py-[100px] py-10 flex items-center justify-center"
+      >
+        <div class="grid md:grid-cols-12 gap-4 items-center">
+          <div class="col-span-6">
+            <img src="./assets/image-3.svg" />
+          </div>
+          <div class="col-span-6">
+            <h2 class="text-[rgba(43,35,58,1)] text-5xl font-semibold pb-5">
+              Ready to get started?
+            </h2>
+            <p class="text-[rgba(43,35,58,0.7)] text-lg">
+              Join thousands of restaurants using our platform to manage
+              bookings and grow their business.
+            </p>
+            <div class="pt-8 md:flex items-center gap-4">
+              <button
+                class="bg-[rgba(255,199,32,1)] text-[rgba(76,43,94,1)] px-8 py-3 rounded-lg transition-colors text-lg"
+              >
+                Try for free
+              </button>
+              <div>
+                <img src="./assets/imag-1.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="mt-24 bg-[linear-gradient(120deg,#4c2b5e_0%,#2a1031_100%)] text-white px-4 lg:px-0"
+    >
+      <div class="container mx-auto pt-14 pb-4 space-y-12">
+        <div
+          class="grid gap-12 lg:[grid-template-columns:1.3fr_1fr_1fr_1fr_1.2fr]"
+        >
+          <div class="space-y-8">
+            <div>
+              <img
+                src="./assets/resOS-logo-light.svg"
+                alt="resOS logo"
+                class="h-10 w-auto"
+              />
+              <p class="mt-4 text-sm text-white/70 max-w-sm leading-relaxed">
+                Restaurant booking system that fills tables and limits no-shows.
+              </p>
+            </div>
+            <button
+              class="bg-[#FFC720] text-[#4c2b5e] font-semibold text-base px-8 py-3 rounded-md shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+            >
+              Try for free
+            </button>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center gap-3">
+                <i
+                  data-lucide="star"
+                  class="w-5 h-5 text-[#00B67A] fill-[#00B67A]"
+                ></i>
+                <p class="font-semibold text-white text-sm">
+                  4.4 on Trustpilot
+                </p>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="./assets/play-store.svg"
+                  alt="Google rating star"
+                  class="w-5 h-5"
+                />
+                <p class="font-semibold text-white text-sm">4.7 on Google</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="./assets/GDPR.svg"
+                  alt="GDPR friendly tools badge"
+                  class="h-8 w-auto"
+                />
+              </div>
             </div>
           </div>
 
+          <div class="space-y-4 text-sm">
+            <h4 class="text-white/50 font-semibold text-base tracking-wide">
+              Product
+            </h4>
+            <ul class="space-y-2 text-white">
+              <li>Reserve with Google</li>
+              <li>Visual Table Planner</li>
+              <li>Booking Reminders</li>
+              <li>Online Waitlist</li>
+              <li>All Features</li>
+            </ul>
+          </div>
+
+          <div class="space-y-4 text-sm">
+            <h4 class="text-white/50 font-semibold text-base tracking-wide">
+              Resources
+            </h4>
+            <ul class="space-y-2 text-white">
+              <li>resOS Journal</li>
+              <li>Customer Cases</li>
+              <li>Knowledge Base</li>
+              <li>Developer API</li>
+              <li>Integrations</li>
+              <li>Press Kit</li>
+            </ul>
+          </div>
+
+          <div class="space-y-4 text-sm">
+            <h4 class="text-white/50 font-semibold text-base tracking-wide">
+              Company
+            </h4>
+            <ul class="space-y-2 text-white">
+              <li>About us</li>
+              <li>Testimonials</li>
+              <li>Feature requests</li>
+              <li>For all restaurants</li>
+              <li class="flex items-center gap-1">
+                System status
+                <svg
+                  class="w-3 h-3"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.5 8.5L7.5 5.5L4.5 2.5"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    opacity="0.7"
+                  />
+                </svg>
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-4 text-sm">
+            <p
+              class="text-white/50 font-semibold text-sm uppercase tracking-wide"
+            >
+              Get the resOS app
+            </p>
+            <div class="flex flex-col gap-3">
+              <a
+                href="#"
+                class="inline-flex w-[150px] max-w-full"
+                aria-label="Download on the App Store"
+              >
+                <img
+                  src="./assets/Apple.svg"
+                  alt="Download on the App Store"
+                  class="w-full h-auto"
+                />
+              </a>
+              <a
+                href="#"
+                class="inline-flex w-[150px] max-w-full"
+                aria-label="Get it on Google Play"
+              >
+                <img
+                  src="./assets/Google2.svg"
+                  alt="Get it on Google Play"
+                  class="w-full h-auto"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-white/20 pt-6 flex flex-col gap-4">
+          <div
+            class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 text-[13px] text-white/50"
+          >
+            <p>&copy; 2017-2025 resOS. All rights reserved.</p>
+            <div class="flex gap-2">
+              <a
+                class="hover:text-white underline text-white/50 text-[13px]"
+                href="#"
+                >Terms &amp; Conditions</a
+              >
+              .
+              <a
+                class="hover:text-white underline text-white/50 text-[13px]"
+                href="#"
+                >Privacy Policy</a
+              >
+            </div>
+            <div class="flex items-center gap-2 text-sm text-white/50">
+              <a
+                class="flex items-center gap-1 hover:text-white underline text-[13px]"
+                href="#"
+              >
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+                Instagram
+              </a>
+              .
+              <a
+                class="flex items-center gap-1 hover:text-white underline text-[13px]"
+                href="#"
+              >
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                LinkedIn
+              </a>
+            </div>
+          </div>
         </div>
       </div>
+    </footer>
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
 
-    </div>
-  </section>
-   <!-- Footer -->
-   <footer
-   class="mt-24 bg-[linear-gradient(120deg,#4c2b5e_0%,#2a1031_100%)] text-white px-4 lg:px-0"
- >
-   <div class="container mx-auto pt-14 pb-4 space-y-12">
-     <div
-       class="grid gap-12 lg:[grid-template-columns:1.3fr_1fr_1fr_1fr_1.2fr]"
-     >
-       <div class="space-y-8">
-         <div>
-           <img
-             src="./assets/resOS-logo-light.svg"
-             alt="resOS logo"
-             class="h-10 w-auto"
-           />
-           <p class="mt-4 text-sm text-white/70 max-w-sm leading-relaxed">
-             Restaurant booking system that fills tables and limits no-shows.
-           </p>
-         </div>
-         <button
-           class="bg-[#FFC720] text-[#4c2b5e] font-semibold text-base px-8 py-3 rounded-md shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
-         >
-           Try for free
-         </button>
-         <div class="space-y-3 text-sm">
-           <div class="flex items-center gap-3">
-             <i data-lucide="star" class="w-5 h-5 text-[#00B67A] fill-[#00B67A]"></i>
-             <p class="font-semibold text-white text-sm">
-               4.4 on Trustpilot
-             </p>
-           </div>
-           <div class="flex items-center gap-3">
-             <img
-               src="./assets/play-store.svg"
-               alt="Google rating star"
-               class="w-5 h-5"
-             />
-             <p class="font-semibold text-white text-sm">4.7 on Google</p>
-           </div>
-           <div class="flex items-center gap-3">
-             <img
-               src="./assets/GDPR.svg"
-               alt="GDPR friendly tools badge"
-               class="h-8 w-auto"
-             />
-           </div>
-         </div>
-       </div>
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      lucide.createIcons();
+      // Currency dropdown toggle
+      const currencyButton = document.getElementById('currency-button');
+      const currencyDropdown = document.getElementById('currency-dropdown');
+      const currencyText = currencyButton.querySelector('span');
+      const currencyChevron = document.getElementById('currency-chevron');
+      const currencyOptions = document.querySelectorAll('.currency-option');
 
-       <div class="space-y-4 text-sm">
-         <h4 class="text-white/50 font-semibold text-base tracking-wide">
-           Product
-         </h4>
-         <ul class="space-y-2 text-white">
-           <li>Reserve with Google</li>
-           <li>Visual Table Planner</li>
-           <li>Booking Reminders</li>
-           <li>Online Waitlist</li>
-           <li>All Features</li>
-         </ul>
-       </div>
-
-       <div class="space-y-4 text-sm">
-         <h4 class="text-white/50 font-semibold text-base tracking-wide">
-           Resources
-         </h4>
-         <ul class="space-y-2 text-white">
-           <li>resOS Journal</li>
-           <li>Customer Cases</li>
-           <li>Knowledge Base</li>
-           <li>Developer API</li>
-           <li>Integrations</li>
-           <li>Press Kit</li>
-         </ul>
-       </div>
-
-       <div class="space-y-4 text-sm">
-         <h4 class="text-white/50 font-semibold text-base tracking-wide">
-           Company
-         </h4>
-         <ul class="space-y-2 text-white">
-           <li>About us</li>
-           <li>Testimonials</li>
-           <li>Feature requests</li>
-           <li>For all restaurants</li>
-           <li class="flex items-center gap-1">
-             System status
-             <svg
-               class="w-3 h-3"
-               viewBox="0 0 12 12"
-               fill="none"
-               xmlns="http://www.w3.org/2000/svg"
-             >
-               <path
-                 d="M4.5 8.5L7.5 5.5L4.5 2.5"
-                 stroke="white"
-                 stroke-width="1.5"
-                 stroke-linecap="round"
-                 stroke-linejoin="round"
-                 opacity="0.7"
-               />
-             </svg>
-           </li>
-         </ul>
-       </div>
-
-       <div class="space-y-4 text-sm">
-         <p
-           class="text-white/50 font-semibold text-sm uppercase tracking-wide"
-         >
-           Get the resOS app
-         </p>
-         <div class="flex flex-col gap-3">
-           <a
-             href="#"
-             class="inline-flex w-[150px] max-w-full"
-             aria-label="Download on the App Store"
-           >
-             <img
-               src="./assets/Apple.svg"
-               alt="Download on the App Store"
-               class="w-full h-auto"
-             />
-           </a>
-           <a
-             href="#"
-             class="inline-flex w-[150px] max-w-full"
-             aria-label="Get it on Google Play"
-           >
-             <img
-               src="./assets/Google2.svg"
-               alt="Get it on Google Play"
-               class="w-full h-auto"
-             />
-           </a>
-         </div>
-       </div>
-     </div>
-
-     <div class="border-t border-white/20 pt-6 flex flex-col gap-4">
-       <div
-         class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 text-[13px] text-white/50"
-       >
-         <p>&copy; 2017-2025 resOS. All rights reserved.</p>
-         <div class="flex gap-2">
-           <a
-             class="hover:text-white underline text-white/50 text-[13px]"
-             href="#"
-             >Terms &amp; Conditions</a
-           >
-           .
-           <a
-             class="hover:text-white underline text-white/50 text-[13px]"
-             href="#"
-             >Privacy Policy</a
-           >
-         </div>
-         <div class="flex items-center gap-2 text-sm text-white/50">
-           <a
-             class="flex items-center gap-1 hover:text-white underline text-[13px]"
-             href="#"
-           >
-             <i data-lucide="instagram" class="w-4 h-4"></i>
-             Instagram
-           </a>
-           .
-           <a
-             class="flex items-center gap-1 hover:text-white underline text-[13px]"
-             href="#"
-           >
-             <i data-lucide="linkedin" class="w-4 h-4"></i>
-             LinkedIn
-           </a>
-         </div>
-       </div>
-     </div>
-   </div>
- </footer>
- <script>
-  // Mobile menu toggle
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // Currency dropdown toggle
-  const currencyButton = document.getElementById('currency-button');
-  const currencyDropdown = document.getElementById('currency-dropdown');
-  const currencyText = currencyButton.querySelector('span');
-  const currencyChevron = document.getElementById('currency-chevron');
-  const currencyOptions = document.querySelectorAll('.currency-option');
-
-  currencyButton.addEventListener('click', (e) => {
-    e.stopPropagation();
-    currencyDropdown.classList.toggle('hidden');
-    currencyChevron.style.transform = currencyDropdown.classList.contains(
-      'hidden'
-    )
-      ? 'rotate(0deg)'
-      : 'rotate(180deg)';
-  });
-
-  // Handle currency selection
-  currencyOptions.forEach((option) => {
-    option.addEventListener('click', () => {
-      const currency = option.getAttribute('data-currency');
-      const symbol = option.getAttribute('data-symbol');
-      currencyText.textContent = `${currency} (${symbol})`;
-      currencyDropdown.classList.add('hidden');
-      currencyChevron.style.transform = 'rotate(0deg)';
-    });
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', (e) => {
-    if (
-      !currencyButton.contains(e.target) &&
-      !currencyDropdown.contains(e.target)
-    ) {
-      currencyDropdown.classList.add('hidden');
-      currencyChevron.style.transform = 'rotate(0deg)';
-    }
-  });
-
-  // Plan switcher logic
-  const annualButton = document.getElementById('annual-button');
-  const monthlyButton = document.getElementById('monthly-button');
-  const priceDisplays = document.querySelectorAll('.price-display');
-  const discountBadge = annualButton.querySelector('div');
-
-  function updatePrices(isAnnual) {
-    priceDisplays.forEach(priceDisplay => {
-      const annualPrice = priceDisplay.getAttribute('data-annual-price');
-      const monthlyPrice = priceDisplay.getAttribute('data-monthly-price');
-      if (isAnnual) {
-        priceDisplay.textContent = `£${annualPrice}`;
-      } else {
-        priceDisplay.textContent = `£${monthlyPrice}`;
-      }
-    });
-  }
-
-  annualButton.addEventListener('click', () => {
-    annualButton.classList.add('bg-[#4c2b5e]', 'shadow-[0_2px_24px_rgba(51,29,72,0.16)]');
-    annualButton.classList.remove('bg-transparent');
-    annualButton.querySelector('span').classList.add('text-white');
-    annualButton.querySelector('span').classList.remove('text-[#4c2b5e]');
-    discountBadge.classList.remove('hidden');
-
-    monthlyButton.classList.remove('bg-[#4c2b5e]', 'shadow-[0_2px_24px_rgba(51,29,72,0.16)]');
-    monthlyButton.classList.add('bg-transparent');
-    monthlyButton.querySelector('span').classList.remove('text-white');
-    monthlyButton.querySelector('span').classList.add('text-[#4c2b5e]');
-    updatePrices(true);
-  });
-
-  monthlyButton.addEventListener('click', () => {
-    monthlyButton.classList.add('bg-[#4c2b5e]', 'shadow-[0_2px_24px_rgba(51,29,72,0.16)]');
-    monthlyButton.classList.remove('bg-transparent');
-    monthlyButton.querySelector('span').classList.add('text-white');
-    monthlyButton.querySelector('span').classList.remove('text-[#4c2b5e]');
-    discountBadge.classList.add('hidden');
-
-    annualButton.classList.remove('bg-[#4c2b5e]', 'shadow-[0_2px_24px_rgba(51,29,72,0.16)]');
-    annualButton.classList.add('bg-transparent');
-    annualButton.querySelector('span').classList.remove('text-white');
-    annualButton.querySelector('span').classList.add('text-[#4c2b5e]');
-    updatePrices(false);
-  });
-
-  // Initialize prices to annual on page load
-  updatePrices(true);
-
-  // Dropdown toggling logic
-  function setupDropdown(toggleId, menuId, chevronId) {
-    const toggle = document.getElementById(toggleId);
-    const menu = document.getElementById(menuId);
-    const chevron = document.getElementById(chevronId);
-
-    if (toggle && menu && chevron) {
-      toggle.addEventListener('click', (e) => {
+      currencyButton.addEventListener('click', (e) => {
         e.stopPropagation();
-        menu.classList.toggle('hidden');
-        chevron.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        currencyDropdown.classList.toggle('hidden');
+        currencyChevron.style.transform = currencyDropdown.classList.contains(
+          'hidden'
+        )
+          ? 'rotate(0deg)'
+          : 'rotate(180deg)';
       });
 
+      // Handle currency selection
+      currencyOptions.forEach((option) => {
+        option.addEventListener('click', () => {
+          const currency = option.getAttribute('data-currency');
+          const symbol = option.getAttribute('data-symbol');
+          currencyText.textContent = `${currency} (${symbol})`;
+          currencyDropdown.classList.add('hidden');
+          currencyChevron.style.transform = 'rotate(0deg)';
+        });
+      });
+
+      // Close dropdown when clicking outside
       document.addEventListener('click', (e) => {
-        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-          menu.classList.add('hidden');
-          chevron.style.transform = 'rotate(0deg)';
+        if (
+          !currencyButton.contains(e.target) &&
+          !currencyDropdown.contains(e.target)
+        ) {
+          currencyDropdown.classList.add('hidden');
+          currencyChevron.style.transform = 'rotate(0deg)';
         }
       });
-    }
-  }
 
-  setupDropdown('features-dropdown-toggle', 'features-dropdown-menu', 'features-chevron');
-  setupDropdown('resources-dropdown-toggle', 'resources-dropdown-menu', 'resources-chevron');
-  setupDropdown('mobile-features-dropdown-toggle', 'mobile-features-dropdown-menu', 'mobile-features-chevron');
-  setupDropdown('mobile-resources-dropdown-toggle', 'mobile-resources-dropdown-menu', 'mobile-resources-chevron');
+      // Plan switcher logic
+      const annualButton = document.getElementById('annual-button');
+      const monthlyButton = document.getElementById('monthly-button');
+      const priceDisplays = document.querySelectorAll('.price-display');
+      const discountBadge = annualButton.querySelector('div');
 
-  // Initialize Lucide icons
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
-  }
-</script>
-</body>
+      function updatePrices(isAnnual) {
+        priceDisplays.forEach((priceDisplay) => {
+          const annualPrice = priceDisplay.getAttribute('data-annual-price');
+          const monthlyPrice = priceDisplay.getAttribute('data-monthly-price');
+          if (isAnnual) {
+            priceDisplay.textContent = `£${annualPrice}`;
+          } else {
+            priceDisplay.textContent = `£${monthlyPrice}`;
+          }
+        });
+      }
 
+      setupDropdown(
+        'features-dropdown-toggle',
+        'features-dropdown-menu',
+        'features-chevron'
+      );
+      setupDropdown(
+        'resources-dropdown-toggle',
+        'resources-dropdown-menu',
+        'resources-chevron'
+      );
+      setupDropdown(
+        'mobile-features-dropdown-toggle',
+        'mobile-features-dropdown-menu',
+        'mobile-features-chevron'
+      );
+      setupDropdown(
+        'mobile-resources-dropdown-toggle',
+        'mobile-resources-dropdown-menu',
+        'mobile-resources-chevron'
+      );
+
+      // Initialize Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    </script>
+  </body>
 </html>
