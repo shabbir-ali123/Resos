@@ -7,6 +7,8 @@
   <title>Pricing - Resos</title>
   <link href="./style.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <style>
     .hero-clip-top {
       clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
@@ -29,9 +31,18 @@
       background-clip: text;
       color: transparent;
     }
-    @media (min-width: 1024px) and (max-width: 1148px) {
+    @media (min-width: 1024px) and (max-width: 1283px) {
       .pricing-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .plus-card{
+        margin-top: 8px;
+        width: 430px;
+      }
+    }
+    @media (max-width: 1024px) {
+      .plus-card{
+        margin-top: 4px;
       }
     }
   </style>
@@ -444,7 +455,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
   <section class="relative w-full pt-8 pb-16">
     <div class="container mx-auto px-4 sm:px-6 lg:px-10">
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pricing-grid gap-4 sm:gap-6 lg:mb-[-160px]"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pricing-grid gap-4 sm:gap-6 lg:mb-[-160px]"
       >
         <!-- Free Plan Card -->
         <div
@@ -460,7 +471,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
                 class="absolute top-2 right-5 flex items-center gap-1.5 bg-[#E8F5E9] rounded-md px-2.5 py-1"
               >
                 <!-- Star Icon -->
-                <img src="./assets/star.svg" alt="Check" class="w-3 h-3" />
+                <i data-lucide="star" class="w-3 h-3 text-[#3AA95D] fill-[#3AA95D]"></i>
 
                 <span class="text-[13px] font-bold text-[#3AA95D]"
                   >Free forever</span
@@ -508,7 +519,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
           <div
             class="bg-[#E8F5E9] px-5 sm:px-6 py-4 flex items-center gap-2 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0 pb-6 sm:pb-20"
           >
-            <img src="./assets/Paragraph.svg" alt="Check" class="w-3 h-4" />
+            <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
             <span class="text-sm font-normal text-[#2B233A]"
               >No credit card required</span
             >
@@ -574,19 +585,19 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
             class="bg-[#EAE1F366] px-5 sm:px-6 py-4 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
           >
             <div class="flex items-center gap-2">
-              <img src="./assets/Paragraph.svg" alt="Check" class="w-3 h-4" />
+              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
               <span class="text-sm font-normal text-[#2B233A]"
                 >90-day money-back guarantee</span
               >
             </div>
             <div class="flex items-center gap-2">
-              <img src="./assets/Paragraph.svg" alt="Check" class="w-3 h-4" />
+              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
               <span class="text-sm font-normal text-[#2B233A]"
                 >Pause or cancel anytime</span
               >
             </div>
             <div class="flex items-center gap-2">
-              <img src="./assets/Paragraph.svg" alt="Check" class="w-3 h-4" />
+              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
               <span class="text-sm font-normal text-[#2B233A]"
                 >No commission. No cover fees</span
               >
@@ -595,7 +606,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
         </div>
         <!-- plus  Plan Card -->
         <div
-          class="relative w-full h-auto md:h-[480px] rounded-xl shadow-lg overflow-hidden md:-mt-6"
+          class="relative plus-card w-full h-auto md:h-[490px] rounded-xl shadow-lg overflow-hidden md:-mt-8"
           style="
             background: linear-gradient(
               165.66deg,
@@ -609,18 +620,18 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
             class="absolute top-3 right-3 flex items-center gap-1.5 bg-[#FFE59A26] rounded-lg px-2.5 py-1 z-10"
           >
             <!-- Star Icon -->
-            <img src="./assets/star-2.svg" alt="Star" class="w-3 h-3" />
+            <i data-lucide="star" class="w-3 h-3 text-[#FFC720] fill-[#FFC720]"></i>
             <span class="text-[13px] font-bold text-[#FFC720]"
               >Best Value</span
             >
           </div>
 
           <!-- Card Content -->
-          <div class="px-6 pt-6 md:pt-8 pb-0 flex flex-col gap-6 md:gap-7">
+          <div class="px-6 pt-6 md:pt-8 pb-0 flex flex-col gap-4">
             <div>
               <!-- Plan Title -->
               <div>
-                <img src="./assets/plus.svg" alt="Star" class="w-6 h-6" />
+                <i data-lucide="crown" class="w-6 h-6" style="color: #FFCC37; fill: #FFCC37;"></i>
               </div>
               <h3 class="text-[24px] font-bold text-white mb-1">
                 Plus <span class="font-normal"> plan </span>
@@ -632,7 +643,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
               </p>
             </div>
 
-            <div>
+            <div class="mt-[3px]">
               <!-- Key Feature -->
               <div class="text-start my-4 md:my-6">
                 <div
@@ -660,38 +671,26 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
 
           <!-- Footer Section -->
           <div
-            class="relative px-5 sm:px-6 py-5 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
+            class="relative px-5 sm:px-6 py-4 pb-10 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
           >
             <!-- Overlay -->
             <div class="absolute inset-0 bg-[#EAE1F3]/10"></div>
             <!-- Content -->
-            <div class="relative z-10 flex flex-col gap-3">
-              <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-white.svg"
-                  alt="Check"
-                  class="w-3 h-4"
-                />
+            <div class="relative z-10 flex flex-col gap-3 mb-1">
+              <div class="flex items-center gap-2 ">
+                <i data-lucide="check" class="w-3 h-4 text-white" stroke-width="3"></i>
                 <span class="text-sm font-normal text-white"
                   >90-day money-back guarantee</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-white.svg"
-                  alt="Check"
-                  class="w-3 h-4"
-                />
+                <i data-lucide="check" class="w-3 h-4 text-white" stroke-width="3"></i>
                 <span class="text-sm font-normal text-white"
                   >Pause or cancel anytime</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-white.svg"
-                  alt="Check"
-                  class="w-3 h-4"
-                />
+                <i data-lucide="check" class="w-3 h-4 text-white" stroke-width="3"></i>
                 <span class="text-sm font-normal text-white"
                   >No commission. No cover fees</span
                 >
@@ -759,19 +758,19 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
             class="bg-[#EAE1F366] px-5 sm:px-6 py-4 flex flex-col gap-3 mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0"
           >
             <div class="flex items-center gap-2">
-              <img src="./assets/Paragraph.svg" alt="Check" class="w-3 h-4" />
+              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
               <span class="text-sm font-normal text-[#2B233A]"
                 >90-day money-back guarantee</span
               >
             </div>
             <div class="flex items-center gap-2">
-              <img src="./assets/Paragraph.svg" alt="Check" class="w-3 h-4" />
+              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
               <span class="text-sm font-normal text-[#2B233A]"
                 >Pause or cancel anytime</span
               >
             </div>
             <div class="flex items-center gap-2">
-              <img src="./assets/Paragraph.svg" alt="Check" class="w-3 h-4" />
+              <i data-lucide="check" class="w-3 h-4 text-[#2B233A]" stroke-width="3"></i>
               <span class="text-sm font-normal text-[#2B233A]"
                 >No commission. No cover fees</span
               >
@@ -815,61 +814,37 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
            
             <div class="flex flex-col gap-4">
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-2 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Real-time availability</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Table management</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Reports & Data analytics</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Hours and service controls</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Flag bad guests</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Multiple user roles</span
                 >
@@ -879,71 +854,43 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
             <!-- Column 2 -->
             <div class="flex flex-col gap-4">
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Smart floor plan and scheduling</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Mobile & Tablet app</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Customisable notifications</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Guest CRM</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Multiple languages</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Feedback & Reviews</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Export your data anytime</span
                 >
@@ -953,71 +900,43 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
            
             <div class="flex flex-col gap-4">
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-2 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >E-mail booking reminders</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >MailChimp integration</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Customisable booking limits</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Auto or manual accept</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Multiple areas</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >No-show protection</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Export & Import booking data</span
                 >
@@ -1027,61 +946,37 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
           
             <div class="flex flex-col gap-4">
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Smart reviews solicitation</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Online booking form and widget</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Booking schedule</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Spam bookings protection</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >Custom booking reminders</span
                 >
               </div>
               <div class="flex items-center gap-2">
-                <img
-                  src="./assets/Paragraph-green.svg"
-                  alt="Check"
-                  class="w-3 h-2.5 flex-shrink-0"
-                />
+                <i data-lucide="check" class="w-4 h-4 flex-shrink-0 text-[#3AA95D]"></i>
                 <span class="text-base font-semibold text-[#2B233A]"
                   >GDPR compliant</span
                 >
@@ -1825,11 +1720,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
          </button>
          <div class="space-y-3 text-sm">
            <div class="flex items-center gap-3">
-             <img
-               src="./assets/star.svg"
-               alt="Trustpilot rating star"
-               class="w-5 h-5"
-             />
+             <i data-lucide="star" class="w-5 h-5 text-[#00B67A] fill-[#00B67A]"></i>
              <p class="font-semibold text-white text-sm">
                4.4 on Trustpilot
              </p>
@@ -1965,7 +1856,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
              class="flex items-center gap-1 hover:text-white underline text-[13px]"
              href="#"
            >
-             <img src="./assets/insta.svg" alt="Instagram" class="w-4 h-4" />
+             <i data-lucide="instagram" class="w-4 h-4"></i>
              Instagram
            </a>
            .
@@ -1973,11 +1864,7 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
              class="flex items-center gap-1 hover:text-white underline text-[13px]"
              href="#"
            >
-             <img
-               src="./assets/Linkedin.svg"
-               alt="LinkedIn"
-               class="w-4 h-4"
-             />
+             <i data-lucide="linkedin" class="w-4 h-4"></i>
              LinkedIn
            </a>
          </div>
@@ -2108,6 +1995,11 @@ class="font-sans antialiased min-h-screen bg-[linear-gradient(75.77deg,#F3F8F5_6
   setupDropdown('resources-dropdown-toggle', 'resources-dropdown-menu', 'resources-chevron');
   setupDropdown('mobile-features-dropdown-toggle', 'mobile-features-dropdown-menu', 'mobile-features-chevron');
   setupDropdown('mobile-resources-dropdown-toggle', 'mobile-resources-dropdown-menu', 'mobile-resources-chevron');
+
+  // Initialize Lucide icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 </script>
 </body>
 
